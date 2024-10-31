@@ -1,0 +1,65 @@
+:root { box-sizing: border-box; }
+
+html, body{
+  overflow-x: hidden;
+}
+
+
+body > main{
+  position: relative;
+  min-height: 100vh;
+}
+
+a,
+img { display: block; }
+
+*,
+*::before,
+*::after { box-sizing: inherit; }
+
+
+input{
+  background-repeat: no-repeat;
+  border: none;
+  outline: 0;
+  margin: 0;
+}
+body,
+html {
+    font-family: "Roboto", sans-serif;
+    position: relative;
+    width: 100%;
+    // overflow-x: hidden;
+}
+picture,
+main,
+section {
+    display: block;
+    width: 100%;
+}
+.container {
+    display: block;
+    margin: 0 auto;
+    max-width: 1143px;
+    width: 100%;
+    padding-left: 20px;
+    padding-right: 20px;
+    box-sizing: border-box;
+}
+
+.hide {
+    &--sm {
+        @include mobile() {
+            display: none !important;
+        }
+    }
+    &--lg {
+        @include desktop() {
+            display: none !important;
+        }
+    }
+}
+
+.swal2-container.swal2-center > .swal2-popup {
+    height: 500px !important;
+}
