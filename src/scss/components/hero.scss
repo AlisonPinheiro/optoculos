@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+
 .franchise {
   padding: 0;
   div:after,
@@ -8,9 +10,32 @@
   section:after {
     display: none;
   }
+  .pageFooter-whatsapp,
+  .topFooter{
+    display: none !important;
+  }
+  .footerLinks_pagamento{
+    width: 100%;
+  }
+  .footerLinks{
+    @include mobile(){
+      .footerItem.toogle{
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        h3{
+          width: 100%;
+        }
+      }
+    }
+  }
 
   > * {
-    font-family: "Open Sans", sans-serif;
+    font-family: "Open Sans", sans-serif !important;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    font-optical-sizing: auto;
+
   }
   .pageFooter {
     margin-top: 0;
@@ -43,6 +68,9 @@
       font-size: 24px;
       color: #fff;
       padding-top: 20px;
+      @include mobile(){
+        font-size: 18px;
+      }
     }
     &__content {
       position: absolute;
@@ -638,11 +666,14 @@
   }
   .logos-section {
     background-color: #a0a0a0;
+    img{
+      margin: 0 auto;
+    }
   }
   .form-bottom {
     position: relative;
     @include mobile() {
-      height: 100vh;
+      height: 70vh;
     }
     img {
       width: 100%;

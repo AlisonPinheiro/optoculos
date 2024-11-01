@@ -4,7 +4,7 @@ function sendEmailToMasterData(email, nome, whatsapp, cidade) {
   var body = {
     email: email,
     nome: nome,
-    celular: whatsapp,
+    telefone: whatsapp,
     cidade: cidade,
   };
 
