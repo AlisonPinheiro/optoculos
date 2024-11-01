@@ -1,6 +1,6 @@
 {
   "name": "n1-rush",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "",
   "scripts": {
     "dev": "webpack --watch --mode development",
