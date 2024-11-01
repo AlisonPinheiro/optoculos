@@ -17,15 +17,13 @@
   .footerLinks_pagamento{
     width: 100%;
   }
-  .footerLinks{
-    @include mobile(){
-      .footerItem.toogle{
-        display: flex !important;
-        align-items: center !important;
-        justify-content: center !important;
-        h3{
-          width: 100%;
-        }
+  @include mobile(){
+    .footerItem.toogle{
+      display: flex !important;
+      align-items: center !important;
+      justify-content: center !important;
+      h3 {
+        width: 100%;
       }
     }
   }
