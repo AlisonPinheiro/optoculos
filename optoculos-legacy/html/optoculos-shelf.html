@@ -1,0 +1,76 @@
+#set($id = $product.Id)
+#set($uri = $product.Uri)
+#set($escapedName = $product.HtmlEscapedName)
+#set($evaluationRate = $product.EvaluationRate)
+
+<span class="idProd" data-id="$id" style="display:none">$id</span>		
+
+<div class="flagGroup">
+	<div class="flagDiscount">$product.ListPriceMinusBestPriceInPercent</div>
+	<!-- <div class="product-espelho-vitrine img-virtualmirror">
+		<button class="glasses__tryon" onclick="fitmixInstance.setFrame(554199)"><img src="/arquivos/virtualmirror.png" alt="Espelho Virtual"></button>
+	</div>  -->
+</div>
+<div class="flagGroup-highlight">
+    <div class="flagGroup-highlight-discount">
+		<a class="cb-stamps__highlight" href="$uri" title="$escapedName">$product.HightLight</a>
+		<a class="cb-stamps__discount" href="$uri" title="$escapedName">$product.DiscountHightLight</a>
+	</div>
+</div>
+
+<div class="productImage">
+	<a class="firstImage" title="$escapedName" href="$uri" data-id="$id">
+		$product.GetImageTag(400,400)
+	</a>
+	<a class="secondImage" title="$escapedName" href="$uri" data-id="$id">
+		$product.GetImageTag(400,400, "2")
+	</a>
+</div>
+<div class="product-espelho-vitrine-shelf">
+	<button class="glasses__tryon" onclick="fitmixInstance.setFrame(554199)">Espelho virtual</button>
+</div>
+<div class="buyShelf">
+		<a href="$uri">
+			MAIS DETALHES
+		</a>
+	</div>
+<div class="productInfo">
+	<p class="shelfProductName">
+		<a title="$escapedName" href="$uri">$product.Name</a>
+	</p>
+	
+	<!-- Trustvox -->
+    <div class="trustvox-showcase" style="text-align: center">
+    <div data-trustvox-product-code="$product.Id"></div>
+    </div>
+    <!-- /Trustvox -->
+	
+	#if ($product.IsInStock)
+	<div class="productPrice">
+        <a href="$uri">
+	        <span class="oldPrice">
+				#if ($product.HasBestPrice)
+					De: $product.ListPrice
+				#end
+			</span>
+			<span class="bestPrice">Por: $product.BestPrice</span>		            
+			<span class="installment">
+				#if ($product.NumbersOfInstallment > 1)
+					<strong>${product.NumbersOfInstallment}X de $product.InstallmentValue</strong> sem juros
+				#end
+			</span>	           
+        </a>
+	</div>
+    <!-- <div class="cb-button-espelho">
+        <button onclick="fitmixInstance.setFrame('484736')">Espelho Virtual</button>
+    </div> -->
+	<div class="buybuttom">
+	      $product.BottomBuyAsynchronous
+	</div>
+	
+	#else
+	<div class="soldOut">
+		<p>Produto esgotado</p>
+	</div>
+	#end
+</div>

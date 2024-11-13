@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:vtex="http://www.vtex.com.br/2009/vtex-common" xmlns:vtex.cmc="http://www.vtex.com.br/2009/vtex-commerce" lang="pt-br">
+
+<head>
+    <vtex:metaTags/>
+    
+    <!--[if lt IE 9]>
+        <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    
+    <vtex:template id="optoculos-commonHead" />
+</head>
+
+<body>
+    <div class="all">
+        <vtex:template id="optoculos-header" />
+        
+        <div id="mainContent">
+            <div class="wrapper">
+                <h2 class="titulo-sessao">Atendimento</h2>
+
+                <!-- NAVEGAÇÃO LATERAL -->
+                <h3 class="selected"><span></span> <i class="ico-arrow"></i></h3>
+                <aside class="navSidebar">                    
+                    <div class="asideOverlay"></div>
+                    <nav class="institutionalLinks">
+                        <a href="#" class="close"><i class="ico-close"></i></a>
+                        <ul>                            
+                            <li><a href="/atendimento/opt-atende" title="Opt atende">Opt atende</a></li>
+                            <li><a href="/atendimento/receita-medica" title="Receita médica">Receita médica</a></li>
+                            <li><a href="/atendimento/garantia" title="Garantia">Garantia</a></li>
+                            <li><a href="/account/" title="Minha conta">Minha conta</a></li>
+                            <li><a href="/account/orders" title="Meus pedidos">Meus pedidos</a></li>                            
+                        </ul>
+                    </nav>
+                </aside>
+                
+                <!-- CONTEUDO -->
+                <section class="pageContent">                    
+                     <vtex:contentPlaceHolder id="conteudo atendimento" />
+                </section>
+
+    		</div><!-- /wrapper -->
+        </div><!-- /mainContent-->
+
+        <vtex:template id="optoculos-footer" />
+    </div><!--/all-->
+
+    <vtex:template id="optoculos-commonBottom" />
+</body>
+</html>

@@ -1,0 +1,153 @@
+/************************************
+
+//COMO ESCREVER E ORGANIZAR O CÓDIGO
+
+
+--- CLASSES ---
+
+Seguir modelo lowerCamelCase
+
+ex: nomeClassTeste
+
+
+--- ORDENAÇÃO DAS PROPRIEDADES ---
+
+.item {
+   // Position
+   position: absolute;
+   top: 50%;
+
+   // Block 
+   display: block;
+   border: 1px solid #000;
+   box-shadow: 1px 1px #000;
+   border-radius: 6px;
+
+   // Cores
+   background-color: #fff;
+   color: #000;
+
+   // Text
+   font: 14px arial, sans-serif #fff;
+   text-align: center;
+}
+
+
+--- REGRAS IMPORTANTES ---
+
+1. Tab com 4 espaços;
+
+2. Propriedades em linhas separadas, espaço entre o valor da propriedade e os ":" e vírgula depois do último valor.
+Ex certo:
+body {
+   background-color: #fff;
+   color: #000;
+}
+Ex errado:
+body{background-color: #fff;color: #000}
+
+3. Usar sempre aspas duplas
+Ex certo:
+a[href$=".com"]
+background-image: url("/images/image.png");
+content: "";
+
+Ex errado:
+a[href$=.com]
+background-image: url('/images/image.png');
+content: '';
+
+4. Evitar repetição de propriedades;
+Ex certo:
+margin: 10px 0 5px;
+
+Ex errado:
+margin-top: 10px;
+margin-bottom: 5px;
+
+
+************************************/
+
+
+//----------------------- 
+
+//PRIMARY VARIABLES
+
+//-----------------------
+
+//color pallete
+$color1: #3c3c3b;
+$color2: #989898;
+$color3: #c8c8c8;
+$color4: #3cb6f7;
+$color5: #43c6cc;
+$color6: #0dd0ae;
+$color7: #3ba5a8;
+$color8: #ff613b;
+$color9: #9a5bb3;
+$color10: #ffd01e;
+
+
+//grey scale
+$black: rgb(0,0,0); //#000000
+$darkergrey: tint($black, 10%); //#191919
+$darkgrey: tint($black, 25%); //#3f3f3f
+$midgrey: tint($black, 50%); //#7f7f7f
+$lightgrey: tint($black, 75%); //#bfbfbf
+$lightergrey: tint($black, 90%); //#e5e5e5
+$evenlightergrey: tint($black, 94.5%); //#f0f0f0
+$white: rgb(255,255,255); //#ffffff
+
+
+//color set
+$primaryColor: $color1;
+$secondaryColor: $color4;
+$suportColor: $color7;
+$borderColor: $color3;
+
+
+//fonts
+
+// @font-face {
+// 	font-family: 'GothamBook';
+// 	src: url('/arquivos/GothamBook.woff.css') format('woff');
+// 	font-weight: normal;
+// 	font-style: normal;
+// }
+// @import url('/arquivos/GothamBook.woff.css');
+$primaryFont: 'Montserrat', sans-serif;
+$secondaryFont: 'Nanum Pen Script', cursive;
+$suportFont: Arial, sans-serif;
+$alternativeFont: 'Nanum Pen Script', cursive; //return to top
+
+@import url('https://fonts.googleapis.com/css?family=Nanum+Pen+Script&display=swap');
+
+
+//----------------------
+
+//DEFINES GRID
+
+//-----------------------
+//$visual-grid: true;
+$visual-grid-color: #81bcac;
+$column: 120px;
+$gutter: 12px;
+$grid-columns: 12;
+
+$max-width: 1600px !global;
+
+//----------------------
+
+//DEFINES BREAKPOINTS
+
+//-----------------------
+// Bourbon Neat Breakpoints
+$mobile-size:720px; // entre 768 e 320
+$tablet-size:1024px; // entre 960 e 720
+$desktop-size:1280px; // entre 1049 e 960
+$largedesktop-size:1281px; // entre x e 1281
+
+$largedesktop: new-breakpoint(min-width $largedesktop-size 12);
+$desktop: new-breakpoint(max-width $desktop-size 12);
+$tablet: new-breakpoint(max-width $tablet-size 8);
+$mobile: new-breakpoint(max-width $mobile-size 4);

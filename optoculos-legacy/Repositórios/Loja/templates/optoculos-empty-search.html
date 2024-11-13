@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:vtex="http://www.vtex.com.br/2009/vtex-common" xmlns:vtex.cmc="http://www.vtex.com.br/2009/vtex-commerce" lang="pt-br">
+
+<head>
+    <vtex:metaTags/>
+    
+    <!--[if lt IE 9]>
+        <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    <vtex:template id="optoculos-commonHead" />
+</head>
+
+<body>
+    <div class="all">
+
+        <vtex:template id="optoculos-header" />
+        
+        <div id="mainContent">
+            <div class="wrapper">
+                <div class="box-emptySearch">
+                    
+                    <div class="box-emptySearch-content">
+                        <div class="termBox">
+                            <p>Não encontramos o que você procura</p>
+                            <h3>Sua busca por <span>"<em></em>"</span> não retornou resultados</h3>
+                        </div>
+                        <div class="tipsBox">
+                            <ul class="box-emptySearch-list">
+                                <li>Tente palavras menos específicas;</li>
+                                <li>Escreva pelo menos 4 caracteres no campo de busca;</li>
+                                <li>Use os menus do site para navegar pelas categorias.</li>
+                            </ul>                    
+                        </div>
+                    </div>
+
+
+                    
+
+                    <section class="featuredProducts shelfCarousel">
+                        <vtex:contentPlaceHolder id="Nossas sugestoes" />
+                    </section>
+
+                </div> 
+    		</div><!-- /wrapper -->
+        </div><!-- /mainContent-->
+
+        <vtex:template id="optoculos-footer" />
+    </div><!--/all-->
+
+    <vtex:template id="optoculos-commonBottom" />
+</body>
+</html>

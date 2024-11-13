@@ -1,0 +1,540 @@
+/* ==========================================================================
+   Common
+   ========================================================================== */
+   body{
+	background: #fff !important;
+	color: $color1;
+	font-size: rem(14px);
+    font-family: $primaryFont !important;
+    line-height: normal;
+	-webkit-font-smoothing: antialiased;
+    -moz-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    -ms-font-smoothing: antialiased;
+    font-smoothing: antialiased;
+    -moz-text-shadow: 0 0 1px rgba(0, 0, 0, 0);
+    -ms-text-shadow: 0 0 1px rgba(0, 0, 0, 0);
+    text-shadow: 0 0 1px rgba(0, 0, 0, 0);
+    -webkit-text-stroke: 1px transparent;
+    -moz-text-stroke: 1px transparent;
+    -ms-text-stroke: 1px transparent;
+    text-stroke: 1px transparent;
+    text-rendering: optimizeLegibility;
+
+    @include media($tablet) {
+        &.menuOpen {
+            overflow: hidden;
+        }
+    }
+    &.hidden {
+		overflow: hidden;
+    }
+    
+    a:hover {
+        text-decoration: none;
+    }
+}
+
+.wrapper{
+	@include outer-container();
+	padding-left: 20px;
+    padding-right: 20px;
+    @include media($mobile) {
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+} 
+
+.right{
+	text-align: right;
+}
+
+.seoStoreName{display: none;}
+
+#ajaxBusy{
+	position: absolute;
+	top: 5px;
+	left: 5px;
+}
+
+/*breadcrumb*/
+@include breadcrumb2($color2, $color5, "");
+.bread-crumb {
+    padding: 20px 0 25px;
+    margin-bottom: 0;
+    font-size: rem(12px);
+    font-weight: 600;
+    text-transform: uppercase;
+
+    li {
+        a:hover {
+            text-decoration: none;
+        }
+        &:after {
+            display: inline-block;
+            vertical-align: middle;
+            width: 4px;
+            height: 4px;
+            background: $color5;
+            @include border-radius(50%);
+        }
+        &:first-child {
+            a {
+                font-size: 0;
+                &:before {
+                    content: 'Home';
+                    display: inline-block;
+                    font-size: rem(12px);
+                }
+            }
+        }
+    }
+    
+    @include media($tablet) {
+        padding: 10px 0;
+        font-size: rem(11px);
+
+        li {
+            &:first-child {
+                a {
+                    
+                    &:before {
+                        font-size: rem(11px);
+                    }
+                }
+            }
+        }
+    }
+    
+}
+
+/*Dropdown*/
+.dropdown {
+    display: table;
+    position: relative;
+    overflow: hidden;
+    .hideContent {
+        position: absolute;
+        @include opacity(0);
+        @include transition(all 0.18s ease-out 0.18s);
+        @include transform(translate(0%, 15px));
+        @include transform-origin(top);
+        @include border-radius(8px);
+    }
+    &.active {
+        overflow: visible;
+        .hideContent {
+            @include opacity(1);
+            @include transform(translate(0%, 10px));
+            z-index: 1;
+        }
+    }
+    .select {
+        line-height: normal;
+    }
+}
+
+
+#news-modal{
+    position: fixed;
+    top: 0;
+    z-index: 5003;
+    width: 100%;
+    height: 100%;
+    transition: 300ms all ease-in-out;
+    
+    fieldset{
+        display: flex;
+        align-items: center;
+        width: 100%;
+        padding: 5px;
+        
+        &.send{
+            width: 50%;
+            @include media($mobile) {
+                width: 100%;
+            }
+        }
+        
+        // @include media($mobile) {
+        //     padding-left: 0;
+            
+        //     &.nome {
+        //         width: 100%;
+        //     }
+            
+        //     &.send{
+        //         width: calc(30% - 0px);
+        //     }
+        // }
+    }
+
+    
+    input {
+        background-color: transparent;
+        color: #c0bfbf;
+        appearance: none;
+        border: 0;
+        font-size: 16px;
+        width: 100%;
+        padding: 13px;
+        border: 1px solid #c0bfbf;
+        border-radius: 30px;
+
+        
+        
+        
+        &::placeholder{
+            color: #c0bfbf;
+        }
+        
+    }
+    
+    button{
+        background-color: #3c3c3b;
+        border: 0;
+        padding: 10px;
+        width: 100%;
+        color: #fff;
+        font-weight: bold;
+        font-size: 14px;
+        border-radius: 30px;
+        cursor: pointer;
+        height: 45px;
+    }
+    
+    .text {
+        margin-top: 20px;
+        .title{
+            font-size: 43px;
+            font-weight: 900;
+            text-transform: uppercase;
+            text-align: center;
+            color: $color5;
+            line-height: 40px;
+            @include media($mobile) {
+                font-size: 24px;
+                line-height: 24px;
+            }
+        }
+        p{
+            font-size: 70px;
+            text-transform: uppercase;
+            line-height: 75px;
+            color: $color5;
+            text-align:center;
+            @include media($mobile) {
+                font-size: 39px;
+                line-height: 39px;
+            }
+            span {
+                font-size: 23px;
+                line-height: 25px;
+                // text-transform: uppercase;
+                // text-align:center;
+                // color: $color5;
+                display: block;
+                @include media($mobile) {
+                    font-size: 13px;
+                    line-height: 13px;
+                }
+            }
+        }
+    }
+
+    .gender {
+        margin: 15px 0;
+        input {
+            width: 20px;
+            cursor: pointer;
+        }
+        label {
+            color: $color1;
+            text-transform: uppercase;
+            font-size: 12px;
+            margin-right: 5px;
+            vertical-align: text-top;
+            position: relative;
+            padding-left: 35px;
+            cursor: pointer;
+
+        }
+    
+        
+        label input {
+            position: absolute;
+            opacity: 0;
+            cursor: pointer;
+            top: 0;
+            left: 15px;
+            z-index: 999;
+        }
+        
+        
+        .checkmark {
+            position: absolute;
+            top: 0;
+            left: 15px;
+            height: 13px;
+            width: 13px;
+            background-color: #eee;
+            border-radius: 50%;
+            border: 1px solid #c0bfbf;
+        }
+        
+        
+        label:hover input ~ .checkmark {
+            background-color: #ccc;
+        }
+        
+        
+        label input:checked ~ .checkmark {
+            background-color: $white;
+        }
+        
+        
+        .checkmark:after {
+            content: "";
+            position: absolute;
+            display: none;
+        }
+        
+        
+        label input:checked ~ .checkmark:after {
+            display: block;
+        }
+        
+        
+        label .checkmark:after {
+            top: 2px;
+            left: 2px;
+            width: 7px;
+            height: 7px;
+            border-radius: 50%;
+            background: $color5;
+        }
+    }
+    
+    .news-modal-overlay{
+        position: fixed;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(#000, 0.8);
+        // padding-top: 0.6em;
+        text-align: left;
+        z-index: 99;
+    }
+
+    .news-modal-close {
+        color: #fff;
+        font-size: 10px;
+        text-transform: uppercase;
+        cursor: pointer;
+    }
+    
+    .news-modal-content{
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        width: 600px;
+        height: 600px;
+        // background-color: #fff;
+        background: url('/arquivos/fundo-popup.png');
+        z-index: 100;
+        border-radius: 50%;
+        &:after{
+            display: none;
+        }
+        
+        @include media($mobile) {
+            width: 320px;
+            height: auto;
+            min-height: 320px;
+            max-width: 95%;
+            max-height: 95%;
+            border-radius: 10px;
+        }
+    }
+
+    
+    
+    .news-modal-head{
+        position: absolute;
+        right: 25px;
+        top: 110px;
+        padding: 10px;
+        cursor: pointer;
+        z-index: 100;
+        @include media($mobile) {
+            right: 0px;
+            top: -30px;
+        }
+    }
+
+    .news-modal-head i{
+        color: #fff;
+    }
+    
+    .news-modal-body{
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        width: 100%;
+        height: 100%;
+        padding: 40px;
+        &:after{
+            display: none;
+        }
+        
+        .banner-news {
+            width: 560px;
+        }
+        
+        @include media($mobile) {
+            padding: 10px;
+            flex-wrap: wrap;
+            .banner-news{
+                order: 1;
+                width: 100%;
+            }
+            .left {
+                order: 2;
+            }
+        }
+        
+    }
+
+    .news-modal-img-left {
+        position: absolute;
+        left: 20px;
+        width: 21%;
+        top: 10px;
+        @include media($mobile) {
+            display: none;
+        }
+    }
+    .news-modal-img-right {
+        position: absolute;
+        right: 5px;
+        top: 45px;
+        width: 25%;
+        @include media($mobile) {
+            display: none;
+        }
+    }
+    
+    .form-modal-news{
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: column;
+        align-items: center;
+        width: 80%;
+        margin-top: 40px;
+        &:after{
+            display: none;
+        }
+        @include media($mobile) {
+            width: 100%;
+            margin-top: 20px;
+        }
+    }
+
+    .news-modal-sucess {
+        display: none;
+        flex-wrap: wrap;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+        margin-top: 60px;
+        text-align: center;
+        @include media($mobile) {
+            margin-top: 20px;
+        }
+        p {
+            color: $color1;
+            font-size: 15px;
+            margin-bottom: 50px;
+            width: 55%;
+            line-height: 20px;
+            span {
+                font-weight: bold;
+                font-size: 16px;
+            }
+            @include media($mobile) {
+                font-size: 13px;
+                line-height: 16px;
+                width: 85%;
+                margin-bottom: 30px;
+                span {
+                    font-size: 14px;
+                }
+            }
+        }
+        button{
+            background-color: #3c3c3b;
+            border: 0;
+            padding: 10px;
+            width: 40%;
+            color: #fff;
+            font-weight: bold;
+            font-size: 14px;
+            border-radius: 30px;
+            cursor: pointer;
+            height: 45px;
+            @include media($mobile) {
+                width: 100%;
+            }
+        }
+    }
+    
+    
+}
+
+#returnToTop {
+    display: none;
+    position: fixed;
+    bottom: 70px;
+    right: 20px;
+    
+    a {
+        
+        border: 1px solid $color9;
+        font-family: $secondaryFont;
+
+
+        @include display(flex);
+        @include justify-content(center);
+        @include flex-direction(column);
+        align-items: center;
+        width: 70px;
+        height: 70px;
+        @include border-radius(50%);
+        text-align: center;
+        color: #9a5bb3;
+        background-color: rgba(255,255,255,.7);
+
+        i {
+            position: relative;
+            @include transform(rotate(-90deg));
+            font-size: 10px;
+        }
+
+        span {
+            margin-top: 7px;
+            font-size: 16px;
+            line-height: .8;
+            @include transform(rotate(-5deg));
+            text-transform: uppercase;
+        }
+
+        &:hover {
+            border: 1px solid $color7;
+            color: $color7;
+        }
+    }
+
+}

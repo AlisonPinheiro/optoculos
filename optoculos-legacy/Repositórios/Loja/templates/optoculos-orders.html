@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:vtex="http://www.vtex.com.br/2009/vtex-common" xmlns:vtex.cmc="http://www.vtex.com.br/2009/vtex-commerce" lang="pt-br">
+
+<head>
+    <vtex:metaTags/>
+    
+    <!--[if lt IE 9]>
+        <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    
+    <!-- <link href="/arquivos/bootstrap.css" rel="stylesheet" type="text/css" /> -->
+    <link href="//netdna.bootstrapcdn.com/font-awesome/3.1.1/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
+    <vtex:template id="optoculos-commonHead" />
+    <link href="/arquivos/optoculos-orders.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+    <div class="all">
+        <vtex:template id="optoculos-header" />
+        
+        <div id="mainContent">
+            <div class="wrapper">
+                <div class="bread-crumb">
+                    <ul>
+                        <li><a title="Home" href="/">Home</a></li>
+                        <li class="last"><strong><a title="Meus pedidos" href="/account/orders">Meus pedidos</a></strong></li>
+                    </ul>
+                </div>
+                <div class="nav-account">
+                    <ul>
+                        <li><a href="/account" title="Minha Conta">Minha Conta</a></li>
+                        <li><h2>Meus pedidos</h2></li>
+                    </ul>
+                </div>
+                <vtex.cmc:orderList/>
+            </div><!-- /wrapper -->
+        </div><!-- /mainContent-->
+
+        <vtex:template id="optoculos-footer" />
+    </div><!--/all-->
+    
+    <!-- <script src="/arquivos/bootstrap.min.js" type="text/javascript"></script>     -->
+    <vtex:template id="optoculos-commonBottom" />
+</body>
+</html>

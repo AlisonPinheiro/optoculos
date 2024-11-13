@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:vtex="http://www.vtex.com.br/2009/vtex-common"
+    xmlns:vtex.cmc="http://www.vtex.com.br/2009/vtex-commerce" lang="pt-br">
+
+
+<head>
+    <meta name="google-site-verification" content="Mmlx-qWAxycLAEwyEJit3E1CqMcGzoq9YS2FXIB5Tk0" />
+    <meta name="google-site-verification" content="KhhkXDuZvnm9P787mbmMTvZ5tev1J-QzMMN7f2lG0OU" />
+    <meta name="facebook-domain-verification" content="rsdflx6teh3524akxqhpxdzlqcazo3" />
+    
+
+    <vtex:metaTags />
+
+    <!--[if lt IE 9]>
+        <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+
+    <vtex:template id="cbyk-commonHead" />
+    <link rel="stylesheet" href="/arquivos/cbyk-style-optoculos.min.css" />
+
+</head>
+
+<body>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-W28WP99" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+    <div class="all">
+        <h1 class="seoStoreName">Opt Óculos</h1>
+
+        <vtex:template id="cbykonne-header" />
+
+        <div id="mainContent">
+            <section id="tvDesktop" class="mainGallery fullGallery">
+                <vtex:contentPlaceHolder id="banner tv" />
+            </section>
+
+            <section id="tvMobile" class="mainGallery fullGallery">
+                <vtex:contentPlaceHolder id="banner tv Mobile" />
+            </section>
+
+            <div class="wrapper">
+
+                <h3 class="spacedtitle">Mais Vendidos</h3>
+                <div class="featuredProducts shelfCarousel">
+                    <vtex:contentPlaceHolder id="Os mais vendidos" />
+                </div>
+
+                <section class="featuredBanner bannerHorizontalHome ">
+                    <vtex:contentPlaceHolder id="Banner Horizontal" />
+                </section>
+
+                <section id="tvMobile" class="mainGallery fullGallery">
+                    <vtex:contentPlaceHolder id="bannerhorizontalmobile" />
+                </section>
+
+                <section id="carosel-collection">
+
+                    <div class="carosel-itens">
+                        <section class="featuredBanner bannerHorizontallateral">
+                            <vtex:contentPlaceHolder id="Banner-lateral-carosel1" />
+                        </section>
+
+                        <div class="featuredCollection sidecarousel ">
+                            <vtex:contentPlaceHolder id="collection-lateral-carosel1" />
+                        </div>
+                    </div>
+
+                    <div class="carosel-itens">
+                        <section class="featuredBanner bannerHorizontallateral2 ">
+                            <vtex:contentPlaceHolder id="Banner-lateral-carosel2" />
+                        </section>
+
+                        <div class="featuredCollection sidecarousel">
+                            <vtex:contentPlaceHolder id="collection-lateral-carosel2" />
+                        </div>
+                    </div>
+
+                    <div class="carosel-itens">
+                        <section class="featuredBanner bannerHorizontallateral3">
+                            <vtex:contentPlaceHolder id="Banner-lateral-carosel3" />
+                        </section>
+
+                        <div class="featuredCollection sidecarousel">
+                            <vtex:contentPlaceHolder id="collection-lateral-carosel3" />
+                        </div>
+                    </div>
+                </section>
+
+                <h3 class="spacedtitle">NOVIDADES</h3>
+                <div class="featuredProducts shelfCarousel">
+                    <vtex:contentPlaceHolder id="Novidades" />
+                </div>
+
+                <section  id="triple-banner-carousel" class="featuredBanner bannerHighlight">
+                    <vtex:contentPlaceHolder id="Banners destaques" />
+                </section>
+
+                <section class="instaFeed">
+                    <h3 class="spacedtitle">Instagram @Optoculos</h3>
+                    
+                </section>
+                <div id="ig">
+                     <!-- LightWidget WIDGET --><script src="https://cdn.lightwidget.com/widgets/lightwidget.js"></script><iframe src="https://cdn.lightwidget.com/widgets/0cbd2c682150555fbe4482a65147667d.html" scrolling="no" allowtransparency="true" class="lightwidget-widget" style="width:100%;border:0;overflow:hidden;"></iframe>
+
+                </div>
+               
+
+                <section class="youtubr-footer" style="display:none">
+                    <h2>Youtube</h2>
+                    <vtex:contentPlaceHolder id="Youtube Footer" />
+                </section>
+            </div><!-- /wrapper -->
+        </div><!-- /mainContent-->
+
+        <vtex:template id="cbyk-footer" />
+    </div>
+    <!--/all-->
+
+    <script src="/arquivos/InstagramFeed.min.js"></script> 
+    <script src="/arquivos/copyBtn.js"></script> 
+    <vtex:template id="cbyk-commonBottom" />
+        <script>
+        $('#btn-copy-cupom').on('click', function(){
+            var textBox = $('#codigoPop');
+            textBox.select();
+            document.execCommand("copy");
+            $('<div id="news-modal-copiado">Copiado</div>').insertAfter('#codigoPop')
+            console.log('copiou')
+        })
+    </script>
+</body>
+
+
+<!-- modal cadastro de news -->
+<!-- <div id="news-modal" style="display: none">
+    <div class="news-modal-overlay"></div>
+    <div class="news-modal-content">
+        <div class="news-modal-head">
+            <div class="news-modal-close">
+                <i class="ico-close"></i> Fechar
+            </div>
+        </div>
+        <div class="news-modal-body">
+            <div class="text">
+                <h3 class="title">CADASTRE-SE<br /> E GANHE</h3>
+                <p class="subtitle">10% OFF <span>NA SUA PRIMEIRA COMPRA</span></p>
+            </div>
+            <form id="form-modal-news" class="form-modal-news">
+                <fieldset class="nome">
+                    <input type="text" name="name" placeholder="Digite seu nome" />
+                </fieldset>
+                <fieldset class="email">
+                    <input type="email" name="email" placeholder="Digite seu e-mail" />
+                </fieldset>
+                <div class="gender">
+                    <label for="newsFeminino" class="labelGender">
+                        <input type="radio" id="newsFeminino" class="newsGender" name="gender" value="Feminino" />
+                        <span class="checkmark"></span>
+                        Feminino
+                    </label>
+                    <label for="newsMasculino" class="labelGender">
+                        <input type="radio" id="newsMasculino" class="newsGender" name="gender" value="Masculino" />
+                        <span class="checkmark"></span>
+                        Masculino
+                    </label>
+                    <label for="newsUnissex" class="labelGender">
+                        <input type="radio" id="newsUnissex" class="newsGender" name="gender" value="Unissex" />
+                        <span class="checkmark"></span>
+                        Unissex
+                    </label>
+                </div>
+                <fieldset class="send">
+                    <button>
+                        CADASTRAR
+                    </button>
+                </fieldset>
+            </form>
+            <div class="news-modal-sucess">
+                <p>Cadastro realizado com sucesso! <br /> Para usar seu desconto, aplique o cupom abaixo na finalização
+                    de compra.<br /> <span>OPTCUPOM10</span><br /> *Desconto válido apenas na primeira compra e uma vez
+                    por CPF.</p>
+                <button class="btn-news-sucess">FECHAR</button>
+            </div>
+            <img src="/arquivos/news-modal-mulher.png" class="news-modal-img-left" />
+            <img src="/arquivos/news-modal-homem.png" class="news-modal-img-right" />
+        </div>
+    </div>
+</div> -->
+
+<!-- modal desconto -->
+<div id="news-modal" style="display: none">
+    <div class="news-modal-overlay"></div>
+    <div class="news-modal-content">
+        <div class="news-modal-head">
+            <div class="news-modal-close">
+                <i class="ico-close"></i>
+            </div>
+        </div>
+        <div class="news-modal-body">
+            <div class="text">
+                <h3 class="title">10% OFF</h3>
+                <p class="subtitle">na primeira compra</p>
+            </div>
+            <input type="text" name="codigo" id="codigoPop" value="OPTCUPOM10" />
+            <button id="btn-copy-cupom">COPIAR</button>
+        </div>
+    </div>
+</div>
+</html>

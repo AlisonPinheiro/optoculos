@@ -12,7 +12,8 @@ function sendEmailToMasterData(email, nome, whatsapp, cidade) {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
-      Accept: "application/vnd.vtex.ds.v10+json",
+      "Accept": "application/vnd.vtex.ds.v10+json",
+      "credentials": 'same-origin'
     },
     body: JSON.stringify(body),
   }).then((response) => {
@@ -25,20 +26,28 @@ function sendEmailToMasterData(email, nome, whatsapp, cidade) {
 }
 
 function checkUserInMasterData(email) {
-  return $.ajax({
-    url: `/api/dataentities/FR/search?_where=email=${email}`,
+  const url = `/api/dataentities/FR/search?_where=email=${email}&an=Optoculos`;
+
+  return fetch(url, {
     method: "GET",
-    contentType: "application/json",
     headers: {
-      Accept: "application/vnd.vtex.ds.v10+json",
+      'Content-Type': 'application/json',
+      'Accept': 'application/vnd.vtex.ds.v10+json'
     },
-    success: function (data) {
-      return data.length > 0;
-    },
-    error: function (err) {
-      console.error("Erro ao verificar o usuário:", err);
-      return false;
-    },
+    credentials: 'same-origin'  // Esta opção garante que os cookies e a autenticação sejam enviados com a requisição
+  })
+  .then(response => {
+    if (!response.ok) {
+      throw new Error("Erro ao verificar o usuário");
+    }
+    return response.json();
+  })
+  .then(data => {
+    return data.length > 0;
+  })
+  .catch(error => {
+    console.error("Erro ao verificar o usuário:", error);
+    return false;
   });
 }
 

@@ -1,0 +1,241 @@
+/* ==========================================================================
+   Home
+   ========================================================================== */
+body.home {
+    .fullGallery {		
+		.slick-slide {
+			a {
+				img {
+					width: 100%;
+					height: auto;
+				}
+			}
+		}
+
+		&#tvDesktop {
+		}
+		&#tvMobile {
+			display: none;
+		}
+
+		@include media($mobile) {
+			&#tvDesktop {
+				display: none;
+			}
+			&#tvMobile {
+				display: block;
+			}
+		}
+    }
+    
+    .featuredBanner {
+        .box-banner {
+            a {
+                display: block;
+                line-height: 0;
+                font-size: 0;
+                text-align: center;
+            }
+            img {
+                width: 100%;
+                height: auto;
+                font-size: 0;
+                line-height: 0;
+            }
+        }
+    }
+
+    .featuredProducts {
+        padding: 70px 0;
+        @include media($tablet) {
+            padding: 40px 0;
+        }
+
+        @include media($mobile) {
+            padding: 30px 0;
+        }
+    }
+
+    .collectionHighlight {
+        .box-banner {
+            width: 50%;
+            float: left;
+        }
+        @include media($mobile) {
+            .box-banner {
+                width: 100%;
+            }
+        }
+    }
+
+    .bannerHighlight {
+        .box-banner {
+            @include span-columns(4);
+        }
+        @include media($tablet) {
+            .box-banner {
+                @include span-columns(2.6623);
+            }
+        }
+        @include media($mobile) {
+            .box-banner {
+                width: 100%;
+                margin-left: 0;
+                margin-right: 0;
+                padding-left: 0;
+                padding-right: 0;
+            }
+        }
+    }
+
+    .bannerHorizontalHome {
+        .box-banner {
+           margin-top: 10px;
+        }
+    }
+
+    .formatCarousel {
+        margin: 70px 0;
+        h2 {
+            @include shelfTitle();
+        }
+        ul {
+            li {
+                @include span-columns(1.7);
+
+                a {
+                    display: block;
+                    color: $color2;
+                    font-size: rem(14px);
+                    text-transform: uppercase;
+                    text-align: center;
+                    @include transition(all .3s ease);
+                    &:hover {
+                        color: $color5;
+                    }
+                }
+                i {
+                    font-size: rem(36px);
+                }
+                span {
+                    display: block;
+                    margin: 10px 0 0;
+                    line-height: 1.2;
+                }
+            }
+        }
+
+        @include media($tablet) {
+            margin: 40px 0;
+            ul {
+                li {
+                    a {
+                        font-size: rem(12px);
+                    }
+                    i {
+                        font-size: rem(24px);
+                    }                    
+                }
+            }
+        }
+        @include media($mobile) {
+            display: none;
+        }
+    }
+
+    .bannerHorizontalHome {
+        @include media($mobile) {
+            display: none;
+        }
+    }
+
+    .benefitsBar {
+        margin: 70px 0 0;
+        li {
+            @include span-columns(2.4);
+            text-align: center;
+        }
+        p {
+            display: block;
+            width: 148px;
+            height: 148px;
+            margin: auto;
+            padding: 35px 0;
+            color: #fff;
+            @include border-radius(50%);
+
+            i {
+                display: block;
+                font-size: rem(38px);
+            }
+            span {
+                display: block;
+                margin-top: 10px;
+                font-size: rem(14px);
+                font-weight: 700;
+                text-transform: uppercase;
+                line-height: 1;
+            }
+
+            &.delivery {background-color: #43c6cc;}
+            &.freight {background-color: #9a5bb3;}
+            &.installment {background-color: #ff613b;}
+            &.truth {background-color: #3cb6f7;}
+            &.callcenter {background-color: #0dd0ae;}
+        }
+
+        @include media($tablet) {
+            margin: 40px 0 0;
+            p {                
+                width: 120px;
+                height: 120px;                
+                padding: 22px 0;
+                span {
+                    font-size: rem(12px);
+                }
+
+                &:after {
+                    display: none !important;
+                }
+            }
+        }
+
+        @include media($mobile) {
+            display: none;
+        }
+    }
+
+    .instaFeed {
+        h2 {
+            @include shelfTitle();
+        }
+        #instagram {
+            display: block;
+            width: 100%;
+            &:after {display: none;}
+        }
+    
+        .instaItem {
+            @include span-columns(2.4);
+            background-position: center center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            overflow: hidden;
+    
+            a {
+                display: block;
+                line-height: 0;
+                font-size: 0;
+    
+                &:before {
+                    content: "";
+                    display: block;
+                    padding-top: 100%;                            
+                }            
+            }
+        }
+        @include media($tablet) {
+            display: none;
+        }        
+    }
+}

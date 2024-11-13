@@ -1,0 +1,74 @@
+<style>
+    .lgpd__modal {
+        position: fixed;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0px 1px 5px 2px rgba(0, 0, 0, 0.41);
+        opacity: 0;
+        pointer-events: none;
+        transition: 0.3s;
+        bottom: 80px;
+        left: 20px;
+        background: white;
+        z-index: 9;
+        margin-right: 20px;
+    }
+
+    .lgpd__modal.is-open {
+        opacity: 1;
+        pointer-events: initial;
+    }
+
+    .lgpd__body {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .lgpd__text {
+        padding-right: 30px;
+    }
+
+    .lgpd__text a {
+        color: #43C6CC;
+        text-decoration: none;
+    }
+
+
+    .lgpd__button {
+        display: block;
+        background: #9561A4;
+        color: white;
+        border: 0;
+        transition: 0.3s;
+        border-radius: 5px;
+        text-transform: uppercase;
+        padding: 10px;
+
+    }
+
+    .lgpd__button:active,
+    .lgpd__button:focus {
+        border: 0;
+        outline: 0;
+        box-shadow: none;
+    }
+
+    .lgpd__button:active {
+        transform: scale(0.9)
+    }
+</style>
+<div class="lgpd__modal">
+    <div class="lgpd__body">
+        <div class="lgpd__text">
+            <p>Nós utilizamos cookies para garantir as funcionalidades do nosso site, memorizar suas
+                preferências de uso em nossa plataforma, elaborar estatísticas sobre o uso de nosso
+                serviço e para lhe enviar ofertas com base nos seus comportamentos de navegação em
+                nosso site, o que poderá incluir o compartilhamento de seus dados com terceiros. Se
+                estiver de acordo, clique em “de acordo”. Você também pode modificar as preferências do
+                seu navegador para controlar o uso de cookies. (Para mais informações, acesse
+                nossa <a href="https://www.optoculos.com.br/atendimento/seguranca"> Política de Privacidade</a>) </p>
+        </div>
+        <button class="lgpd__button"> aceito </button>
+    </div>
+</div>

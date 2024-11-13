@@ -1,0 +1,75 @@
+<header class="pageHeader">
+	<div class="wrapper">
+		<div class="menu-mobile-toggle">
+			<i class="ico-menu"></i>
+		</div>
+		<div class="logo">
+			<a href="" title="Opt Óculos" class="logoImg">
+				<img src="/arquivos/logo-optoculos.png" alt="Opt Óculos"/>
+			</a>
+		</div><!--/logo-->
+		<div class="navigation">
+			<div class="navOverlay"></div>
+			<nav class="pageNav">
+				<div class="navHead">
+					<i class="ico-close"></i>				
+					<div class="welcomeMsg">
+						<a href="/login">Entrar</a>
+					</div>
+					<div class="accountMobileNav">
+						<div class="content">
+							<a href="/account" title="Minha Conta">Minha Conta</a>
+							<a href="/account/orders" title="Meus Pedidos">Meus Pedidos</a>
+						</div>
+					</div>	
+				</div>
+				<vtex.cmc:optoculosNavigator />
+			</nav>			
+		</div>
+		<div class="toggleButtons">
+			<div class="userLinks">
+				<ul>
+					<li><a href="/institutional/nossas-lojas">Nossas lojas</a></li>
+					<li class="enterAccount dropdown">
+						<a href="#" class="select" title="Entrar">Entrar</a>
+						<div class="hideContent">
+							<a href="/account" title="Minha Conta">Minha Conta</a>
+							<a href="/account/orders" title="Meus Pedidos">Meus Pedidos</a>
+							<div class="welcomeMsg">
+								<a href="/login">Entrar / Cadastre-se</a>
+							</div>
+						</div>
+					</li>
+				</ul>
+			</div>
+			<div class="toggleSearch">
+				<span>Buscar</span>
+				<i class="ico-search"></i>
+				<i class="ico-close"></i>
+			</div>
+			<div class="header-cart">
+				<div class="hidden">
+					<vtex.cmc:miniCart />
+				</div>
+				<div class="cart">
+					<div class="sta-cart"></div>
+				</div><!-- /.cart -->
+			</div><!-- /.header-cart -->
+		</div>
+
+	</div>
+
+	<div class="modalSearch">
+		<div class="searchOverlay"></div>
+		<div class="modalSearchBody"> 
+			<div class="wrapper"> 
+				<div class="closeModal">
+					<i class="ico-close"></i> Fechar
+				</div>
+				<div class="searchBox">
+					<vtex.cmc:fullTextSearchBox/>
+				</div><!-- /searchBox -->
+			</div>
+		</div>
+	</div>
+</header>

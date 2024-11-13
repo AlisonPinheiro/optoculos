@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:vtex="http://www.vtex.com.br/2009/vtex-common" xmlns:vtex.cmc="http://www.vtex.com.br/2009/vtex-commerce" lang="pt-br">
+
+<head>
+    <vtex:metaTags/>
+    
+    <!--[if lt IE 9]>
+        <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    
+    <vtex:template id="optoculos-commonHead" />
+    <link rel="stylesheet" href="/arquivos/optoculos-ballon.css"/>
+</head>
+
+<body>
+    <div class="all">
+        <h1 class="seoStoreName">Opt Óculos</h1>
+
+        <vtex:template id="optoculos-header" />
+        
+        <div id="mainContent">
+            <section id="tvDesktop" class="mainGallery fullGallery">
+                <vtex:contentPlaceHolder id="banner tv" />
+            </section>
+
+            <section id="tvMobile" class="mainGallery fullGallery">
+                <vtex:contentPlaceHolder id="banner tv Mobile" />
+            </section>
+
+            <section class="featuredBanner collectionHighlight">
+                <vtex:contentPlaceHolder id="Banners destaques Coleções" />
+            </section>
+            
+            <div class="wrapper">
+                <section class="featuredProducts shelfCarousel">
+                    <vtex:contentPlaceHolder id="Os mais vendidos" />
+                </section>
+
+                <section class="featuredBanner bannerHighlight">
+                    <vtex:contentPlaceHolder id="Banners destaques" />
+                </section>
+
+                <section class="formatCarousel">
+                    <h2>O estilo ideal</h2>
+                    <ul>
+                        <vtex:contentPlaceHolder id="Estilo ideal" />
+                    </ul>
+                </section>
+
+                <section class="featuredBanner bannerHorizontalHome">
+                    <vtex:contentPlaceHolder id="Banner Horizontal" />
+                </section>
+
+                <section class="benefitsBar tipBar">
+                    <ul>
+                        <li>
+                            <p class="delivery" data-balloon="Você pode receber em casa ou retirar em qualquer uma de nossas lojas. Nas cidades que temos lojas você pode receber em casa quase no mesmo dia." data-balloon-length="large" data-balloon-pos="down">
+                                <i class="ico-box"></i>
+                                <span>Entrega e <br/>comodidade</span>
+                            </p>
+                        </li>
+                        <li>
+                            <p class="freight" data-balloon="Frete grátis nas compras a partir de R$ 300,00." data-balloon-length="large" data-balloon-pos="down">
+                                <i class="ico-truck"></i>
+                                <span>Frete <br/>grátis*</span>
+                            </p>
+                        </li>
+                        <li>
+                            <p class="installment" data-balloon="Aqui você encontra as melhores condições de pagamento, podendo pagar em até 10% sem juros." data-balloon-length="large" data-balloon-pos="down">
+                                <i class="ico-card"></i>
+                                <span>10x sem<br/> juros*</span>
+                            </p>
+                        </li>
+                        <li>
+                            <p class="truth" data-balloon="Produtos originais das melhores marcas, sempre acompanhado de notas fiscais que atesam a segurança e garantia." data-balloon-length="large" data-balloon-pos="down">
+                                <i class="ico-medal"></i>
+                                <span>Autenti<br/> cidade*</span>
+                            </p>
+                        </li>
+                        <li>
+                            <p class="callcenter" data-balloon="Fique a vontade para falar com nossa central de atendimento. Pode ser pelo facebook, telefone, e-mail ou chat do site. Lá você tira suas duvidas, compra produtos, recebe ajuda para navegar no site, sabe mais sobre nossas lojas e muito mais." data-balloon-length="large" data-balloon-pos="down">
+                                <i class="ico-clerk"></i>
+                                <span>Opt<br/> atende*</span>
+                            </p>
+                        </li>
+                    </ul>
+                </section>
+
+                <section class="featuredProducts shelfCarousel">
+                    <vtex:contentPlaceHolder id="Novidades" />
+                </section>
+
+                <section class="instaFeed">
+                    <h2>Instagram</h2>
+                    <div id="instagram"></div>
+                </section>
+    		</div><!-- /wrapper -->
+        </div><!-- /mainContent-->
+
+        <vtex:template id="optoculos-footer" />
+    </div><!--/all-->
+
+    <vtex:template id="optoculos-commonBottom" />
+</body>
+</html>

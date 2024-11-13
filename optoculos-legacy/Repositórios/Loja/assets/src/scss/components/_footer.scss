@@ -1,0 +1,638 @@
+/* ==========================================================================
+   Footer - Skeleton
+   ========================================================================== */
+.pageFooter {
+    .topFooter {
+        h3 {
+            @include span-columns(3);
+            float: none;
+            display: inline-block;
+            vertical-align: middle;
+        }
+        fieldset {
+            @include span-columns(8.5);
+            float: none;
+            display: inline-block;
+            vertical-align: middle;
+        }
+
+        @include media($tablet) {
+            h3 {
+                display: block;
+                width: 100%;
+                margin-left: 0;
+                margin-right: 0;
+            }
+            fieldset {
+                display: block;
+                width: 100%;
+                margin-left: 0;
+                margin-right: 0;
+            }
+        }
+    }
+    .middleFooter {
+        .socialCol {
+            @include span-columns(2.5);
+            @include shift(.5);
+        }
+        .phoneCol {
+            @include span-columns(2.5);
+        }
+        .institutionalCol {
+            @include span-columns(2.5);
+        }
+        .contactCol {
+            @include span-columns(2);
+        }
+        .supportCol {
+            @include span-columns(2);
+        }
+
+        @include media($tablet) {
+            .socialCol {
+                width: 100%;
+                margin-left: 0;
+                margin-right: 0;
+                float: none;
+            }
+            .phoneCol {
+                @include span-columns(2);
+            }
+            .institutionalCol {
+                @include span-columns(2);
+            }
+            .contactCol {
+                @include span-columns(2);
+            }
+            .supportCol {
+                @include span-columns(2);
+            }
+        }
+        @include media($mobile) {
+            .footerLinks {
+                & > div {
+                    width: 100%;
+                    margin-right: 0;
+                    margin-left: 0;
+                    float: none;
+                    clear: both;
+                }
+            }
+        }
+    }
+    .bottomFooter {
+        .paymentCol {
+            @include span-columns(4);
+            @include shift(1);
+        }
+        .safeCol {
+            @include span-columns(3);
+        }
+        .powerCol {
+            @include span-columns(3);
+        }
+
+        @include media($tablet) {
+            .paymentCol {
+                @include span-columns(3);
+                @include shift(.5);
+            }
+            .safeCol {
+                @include span-columns(2.5);
+                @include shift(1);
+                @include omega();
+            }
+            .powerCol {
+                width: 100%;
+                margin-left: 0;
+                margin-right: 0;
+                float: none;
+                clear: both;
+            }
+        }
+        @include media($mobile) {
+            .footerItem {
+                width: 100%;
+                margin-right: 0;
+                margin-left: 0;
+                float: none;
+                clear: both;
+            }
+        }
+    }
+}
+
+/* ==========================================================================
+   Footer
+   ========================================================================== */
+.pageFooter {   
+    background: #fff;
+    margin-top: 120px;
+
+    @include media($mobile) {
+        margin-top: 40px;
+    }
+
+    .topFooter {
+        background: $color5;
+        padding: 30px 0;    
+        h3 {
+            color: #fff;
+            font-size: rem(56px);
+            font-weight: 900;
+            text-transform: uppercase;
+            text-align: center;
+            line-height: 1;
+            span {
+                display: block;
+                font-size: rem(18px);
+                font-weight: 300;
+            }
+        }
+
+        // Form Footer
+        fieldset {
+            .campos {
+                display: table;
+                width: 100%;
+                & > div {
+                    display: table-cell;
+                    vertical-align: middle;
+                }
+                .inputName {
+                    width: 30%;
+                    padding-right: 10px;
+                }
+                .inputEmail {
+                    width: 30%;
+                    padding: 0 10px;
+                }
+                .inputGender {
+                    width: 15%;
+                    padding: 0 10px;
+                    line-height: 1.8;
+                }
+                .inputButton {
+                    width: 25%;
+                    padding-left: 10px;
+                }
+            
+                input[type='text'] {
+                    display: block;
+                    width: 100%;
+                    height: 50px;
+                    padding: 0px 15px;
+                    border: 0;
+                    background: #fff;
+                    color: $color1;
+                    font-size: rem(13px);
+                    font-family: $primaryFont;
+                    @include border-radius(25px);
+                    @include box-shadow(none);
+                    @include appearance(none);
+                    @include transition(all .3s ease);
+                    &:active,
+                    &:focus {                        
+                        color: $color5;
+                    }                    
+                }
+                input[type='radio'] {
+                    display: inline-block;
+                    vertical-align: middle;
+                    width: 15px;
+                    height: 15px;
+                    margin: 0 10px 0 0;
+                    top: -1px;
+                    border: 0;
+                    background: #fff;
+                    cursor: pointer;
+                    @include appearance(none);
+                    @include border-radius(50%);
+                    @include transition(all .3s ease);
+        
+                    &:checked {
+                        background: $color1;
+                        @include box-shadow(inset 0 0 0 4px #fff);
+                    }
+        
+                    & + label {
+                        display: inline-block;
+                        vertical-align: middle;
+                        margin-bottom: 0;
+                        color: $color1;
+                        font-size: rem(13px);
+                        font-family: $primaryFont;
+                        font-weight: bold;
+                        line-height: normal;
+                        text-transform: uppercase;
+                        cursor: pointer;
+                    }
+                }
+                @include placeholderColor($color2);
+            }
+            
+            #ButtonOK-News {
+                @include supportButton($color9);
+            }
+            .erro {
+                display: none;
+                text-align: center;
+                color: #fff;
+                p {
+                }
+                a {
+                    @include supportButton($color9);
+                    max-width: 300px;
+                    display: block;
+                    margin: 10px auto;
+                }
+            }
+            .success {
+                color: #fff;
+                font-size: rem(13px);
+                text-align: center;
+                strong {
+                    font-size: rem(15px);
+                    display: block;
+                    font-weight: 600;
+                }
+            }
+        }
+
+        @include media($tablet) {
+            h3 {
+                margin-bottom: 15px;
+                font-size: rem(40px);                
+                span {
+                    font-size: rem(15px);
+                }
+            }
+            fieldset{
+                .campos {
+                    display: block;
+
+                    .inputName {
+                        @include span-columns(3);
+                        @include shift(1);
+                        @include omega();
+                        margin-bottom: 15px;                        
+                    }
+                    
+                    .inputEmail {
+                        @include span-columns(3);
+                        @include omega();
+                        margin-bottom: 15px;
+                        padding-right: 0;                        
+                    }
+
+                    .inputGender {
+                        display: block;
+                        width: 100%;
+                        margin-bottom: 15px;
+                        clear: both;
+                        text-align: center;
+                        br {display: none;}
+                        input[type='radio'] {
+                            &:not(:first-child) {
+                                margin-left: 40px;
+                            }
+                        }
+
+                    }
+                    .inputButton {
+                        display: block;
+                        width: 100%;
+                        text-align: center;
+                        #ButtonOK-News {
+                            max-width: 230px;
+                        }
+                    }
+                }
+            }
+        }
+
+        @include media($mobile) {
+            padding: 15px 0;            
+            fieldset{
+                .campos {
+                    .inputName {
+                        width: 100%;
+                        padding-right: 0;
+                        margin-left: 0;
+                        margin-right: 0;
+                        float: none;
+                    }
+                    
+                    .inputEmail {
+                        width: 100%;
+                        padding-left: 0;
+                        margin-left: 0;
+                        float: none;
+                    }
+
+                    .inputButton {
+                        #ButtonOK-News {
+                            max-width: 320px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .middleFooter {
+        background: $color1;
+        padding: 45px 0;
+        color: $color5;
+
+        @include media($mobile) {
+            padding: 20px 0;
+        }
+
+        a {
+            color: #fff;
+            &:hover {
+                text-decoration: none;
+            }
+        }
+
+        .socialCol {
+            text-align: center;
+            .hideDesk {
+                display: none;
+            }
+            ul {
+                margin: 35px 0 0;
+                padding: 0;
+                li {
+                    display: inline-block;
+                    vertical-align: middle;
+                    padding: 0 20px;
+                    font-size: rem(23px);
+                    line-height: normal;
+                }
+            }
+            @include media($tablet) {
+                text-align: center;
+                margin-bottom: 45px;
+                .hideDesk {
+                    display: inline-block;
+                }
+                .hideMobile {
+                    display: none;
+                }
+
+                img {
+                    vertical-align: middle;
+                }
+                ul {
+                    display: inline-block;
+                    vertical-align: middle;
+                    margin-top: 0;
+                    margin-left: 30px;
+                }
+            }
+
+            @include media($mobile) {
+                margin-bottom: 20px;
+                ul {
+                    margin-left: 20px;
+                    li {
+                        padding: 0 10px;
+                    }
+                }
+            }
+        }
+
+        .phoneCol {
+            .itemContent {
+                p {
+                    color: #fff;
+                    font-size: rem(23px);
+                    font-weight: 900;
+                    text-transform: uppercase;
+                    line-height: 1.5;
+                }
+                span {
+                    display: block;
+                    font-size: rem(11px);
+                    font-weight: 300;
+                }
+                a {
+                    display: block;
+                    max-width: 215px;
+                    padding: 5px 10px;
+                    margin-top: 10px;
+                    border: 1px solid $color5;
+                    color: $color5;
+                    font-size: rem(10px);
+                    text-transform: uppercase;
+                    text-align: center;
+                    line-height: 1;
+                    @include border-radius(25px);
+                    @include transition(all .3s ease);
+                    text-transform: uppercase;
+                    &:hover {
+                        padding-left: 0;
+                        border: 1px solid $color4;
+                        color: $color4;
+                    }
+                }
+            }
+            @include media($tablet) {
+                .itemContent {
+                    p{
+                        font-size: rem(18px);
+                    }
+                    a {
+                        max-width: 150px;
+                    }
+                }
+            }
+
+            @include media($mobile) {
+                text-align: center;
+                h3 {
+                    margin-bottom: 0px;
+                    text-align: center;
+                }
+                .itemContent {
+                    a {
+                        margin: 10px auto;
+                        max-width: 100%;
+                    }
+                }
+            }
+        }
+
+        .itemContent {
+			li {                
+                margin-bottom: 15px;
+                line-height: normal;
+			}
+
+			a {
+				display: block;
+				padding: 3px 0;				
+				font-size: rem(12px);
+				@include transition(all .18s ease);
+
+				&:hover {
+					padding-left: 3px;
+				}
+			}
+		}
+    }
+
+    .bottomFooter {
+        padding: 35px 0;
+        h3 {
+            color: $color2;
+        }
+        li {
+            display: inline-block;
+            vertical-align: middle;
+            margin-bottom: 20px;
+            &:not(:last-child) {
+                margin-right: 20px;
+            }
+        }
+        .paymentCol {
+            color: $color2;
+            .ico-master {font-size: rem(24px);}
+            .ico-visa {font-size: rem(14px);}
+            .ico-amex {font-size: rem(10px);}
+            .ico-diners {font-size: rem(27px);}
+            .ico-hipercard {font-size: rem(22px);}
+            .ico-elo {font-size: rem(27px);}
+            .ico-boleto {font-size: rem(18px);}            
+        }
+        .powerCol {
+            padding-top: 40px;
+            text-align: right;
+            li {
+                margin-bottom: 0;
+                a {
+                    font-size: 0;
+                    color: $color2;
+                    i {
+                        font-size: rem(24px);
+                        &.ico-vtex {
+                            font-size: rem(34px);
+                        }
+                    }
+                }
+            }
+        }
+
+        @include media($tablet) {
+            padding-bottom: 10px;
+            .footerItem {
+                h3 {
+                    margin: 0 0 20px 0;
+                }
+            }
+            .paymentCol {
+                ul { 
+                    text-align: center;
+                }                    
+            }
+            .powerCol {
+                text-align: center;
+                &:last-child {
+                    padding-top: 10px;
+                }
+            }
+            
+        }
+    }
+
+    .addressRow {
+        padding: 20px 0;
+        color: $color2;
+        font-size: rem(10px);
+        text-align: center;
+        text-transform: uppercase;
+        span, address {
+            display: inline-block;
+            vertical-align: middle;
+        }
+
+        @include media($tablet) {
+            padding-top: 0;
+            width: 70%;
+            margin: 0 auto;
+        }
+        @include media($mobile) {
+            width: 100%;
+        }
+    }
+
+    .footerItem {
+        h3 {
+            position: relative;
+            margin: 0 0 35px 0;
+            font-size: rem(13px);
+            font-weight: 900;
+            text-transform: uppercase;
+            line-height: normal;
+            i {
+                display: none;
+                position: absolute;
+                top: 5px;
+                right: 0;
+                color: $color2;
+                font-size: rem(6px);
+                @include transform(rotate(90deg) scale(1));
+            }
+        }
+
+        @include media($mobile) {
+            h3 {
+                margin: 15px 0 20px 0;
+                cursor: pointer;
+                i {display: block;}
+                &.active {
+                    i{@include transform(rotate(90deg) scale(-1));}
+                }
+            }
+
+            &.toggle {                
+                .itemContent {
+                    display: none;
+                    height: 0;
+                    &.active {
+                        display: none;
+                        height: auto;
+                    }
+                }
+            }
+        }
+    }
+
+    .itemContent {
+        ul {
+            margin: 0;
+            padding: 0;
+        }
+        li {
+            margin: 0;            
+            line-height: normal;				
+        }
+    }
+}
+
+/* ==========================================================================
+   Footer Toggle
+   ========================================================================== */
+body.notMobile {
+	.middleFooter{
+		.itemContent {
+			display: block !important;
+			ul {
+				margin: 0 !important;
+			}
+		}
+	}
+}

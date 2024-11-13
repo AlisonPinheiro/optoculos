@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:vtex="http://www.vtex.com.br/2009/vtex-common" xmlns:vtex.cmc="http://www.vtex.com.br/2009/vtex-commerce" lang="pt-br">
+
+<head>
+    <vtex:metaTags/>
+    
+    <!--[if lt IE 9]>
+        <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    
+    <link rel="stylesheet" href="/arquivos/jquery-modal.css" type="text/css" media="screen" />
+    <vtex:template id="optoculos-commonHead" />
+</head>
+
+<body>
+    <div class="all">
+        <vtex:template id="optoculos-header" />
+        
+        <div id="mainContent">
+            <div class="wrapper">                
+                <div class="bread-crumb">
+                    <ul>
+                        <li><a title="Home" href="/">Home</a></li>
+                        <li class="last"><strong><a title="Minha conta" href="/account">Minha conta</a></strong></li>
+                    </ul>
+                </div>
+                
+                <div class="nav-account">
+                    <ul>
+                        <li><h2>Minha Conta</h2></li>
+                        <li><a href="/account/orders" title="Meus pedidos">Meus pedidos</a></li>
+                    </ul>
+                </div>
+                
+                <vtex.cmc:accountUserProfile />
+                <vtex.cmc:accountAddress/>
+            </div><!-- /wrapper -->
+        </div><!-- /mainContent-->
+
+        <div id="edit-profile" class="modal" style="display:none;"></div>
+        <div id="exclude-address" class="modal" style="display:none;"></div>
+        <div id="include-address" class="modal" style="display:none;"></div>
+
+        <vtex:template id="optoculos-footer" />
+    </div><!--/all-->
+    
+    <script src="/arquivos/jquery-modal.min.js" type="text/javascript" charset="utf-8"></script>
+    <vtex:template id="optoculos-commonBottom" />
+</body>
+</html>

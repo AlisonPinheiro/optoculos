@@ -1,0 +1,44 @@
+#set($id = $product.Id)
+#set($uri = $product.Uri)
+#set($escapedName = $product.HtmlEscapedName)
+#set($evaluationRate = $product.EvaluationRate)
+
+<span class="idProd" data-id="$id"></span>		
+
+<div class="flagGroup">
+	<div class="flagDiscount">$product.ListPriceMinusBestPriceInPercent</div>	
+</div>
+
+<div class="productImage">
+	<a title="$escapedName" href="$uri">
+		$product.GetImageTag(400,400)
+	</a>	
+</div>
+
+<div class="productInfo">
+	<p class="shelfProductName">
+		<a title="$escapedName" href="$uri">$product.Name</a>
+	</p>
+	
+	#if ($product.IsInStock)
+	<div class="productPrice">
+        <a href="$uri">
+			#if ($product.HasBestPrice)
+			<span class="oldPrice">
+				De: $product.ListPrice
+			</span>
+			#end
+			<span class="bestPrice">Por: $product.BestPrice</span>		            
+			#if ($product.NumbersOfInstallment > 1)
+			<span class="installment">
+				ou em até <strong>${product.NumbersOfInstallment}X de $product.InstallmentValue</strong>
+			</span>	           
+			#end
+        </a>
+	</div>
+	#else
+	<div class="soldOut">
+		<p>Produto esgotado</p>
+	</div>
+	#end
+</div>

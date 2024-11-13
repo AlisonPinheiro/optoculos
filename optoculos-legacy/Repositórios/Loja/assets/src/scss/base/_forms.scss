@@ -1,0 +1,100 @@
+/*forms*/
+
+@mixin form(){
+	label{
+		display: block;
+		margin-bottom: 10px;
+        color: $color2;
+        font-family: $primaryFont;
+		font-size: rem(13px);		
+		line-height: 1;
+
+        &.radio {
+		  color: $color2;
+        }
+	}
+
+	input[type=text], textarea,
+    input[type=email],    
+    input[type=date] {
+		display: block;
+        width: 100%;
+        margin-bottom: 15px;
+        border: 1px solid $borderColor;
+        color: $color1;
+        font-size: rem(16px);
+        font-family: $primaryFont;
+        @include border-radius(25px);
+        @include box-shadow(none);
+        @include appearance(none);
+        @include transition(all .3s ease);
+        &:active,
+        &:focus {
+        	border: 1px solid $color6;
+            color: $color6;
+        }
+        &.error {
+        	border: 1px solid $color8;
+        	&:active,
+	        &:focus {
+	        	border: 1px solid $color6;
+	        }
+        }
+    }
+    input[type=text], 
+    input[type=date],
+    input[type=email] {        
+        height: 40px;
+        padding: 0px 15px;
+    }
+    input[type=radio] {
+    	display: inline-block;
+    	vertical-align: middle;
+    	margin-right: 5px;
+    	margin-bottom: 8px;
+    	&+label {
+    		display: inline-block;
+    		vertical-align: middle;    		
+    		margin-right: 15px;
+    	}
+    }
+    textarea {    	
+        padding: 20px;
+        min-height: 150px;
+        resize: none;
+    }
+    select {
+        display: block;        
+        width: 100%;
+        height: 40px;        
+        padding: 0 10px;
+        margin-bottom: 10px;
+        border: 1px solid $borderColor;
+        color: $color1;
+        font-size: rem(16px);
+        font-family: $primaryFont;  
+        @include border-radius(25px);
+        @include box-shadow(none);
+        @include transition(all .3s ease);
+        &:active,
+        &:focus {
+			border: 1px solid $color6;
+			color: $color6;
+        }
+        &.error {
+        	border: 1px solid $color8;
+        	&:active,
+	        &:focus {
+	        	border: 1px solid $color6;
+	        }
+        }
+    }
+    input[type=checkbox] + label {
+        display: inline-block;
+        vertical-align: middle;
+        margin-top: 3px;
+        margin-left: 3px;
+        font-size: rem(12px);
+    }
+    @include placeholderColor($color2);
+}

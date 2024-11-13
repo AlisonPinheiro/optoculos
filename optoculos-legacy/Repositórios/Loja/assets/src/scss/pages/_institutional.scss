@@ -1,0 +1,668 @@
+/* ==========================================================================
+   Institutional - Esqueleto
+   ========================================================================== */
+body.institutional {
+	#mainContent {
+		.wrapper {
+			max-width: 1060px;
+		}
+	}	
+	.navSidebar {
+		@include span-columns(2 of 8);
+	}
+	.pageContent {
+		@include span-columns(5.6 of 8);
+		@include shift(.4 of 8);
+	}
+
+	@include media($mobile) {
+		.navSidebar {			
+			width: 100%;
+			float: none;
+		}
+
+		.pageContent {
+			width: 100%;
+			float: none;			
+			@include shift(0);
+		}
+	}
+}
+/* ==========================================================================
+Institutional - Customização
+========================================================================== */
+body.institutional {
+	.titulo-sessao {
+		@include sectionTitle();
+		text-align: center;
+	}
+	h3.selected {
+		display: none;
+		background: $color9;
+		border: 0;
+		padding: 10px 15px;
+		color: $white;
+		font-size: rem(16px);
+		text-align: center;	
+		text-transform: uppercase;
+		font-weight: 700;
+		cursor: pointer;
+		@include appearance(none);
+		@include border-radius(50px);
+		@include transition(all .3s ease);	
+
+		i {
+			display: inline-block;
+			vertical-align: middle;
+			float: right;
+			margin-top: 6px;
+			font-size: rem(8px);
+			@include transform(rotate(90deg))
+		}
+	}
+	.navSidebar {
+		ul {
+			clear: both;
+		}
+
+		a.close{display: none;}
+
+		li {
+			display: block;
+			margin-bottom: 10px;
+			
+			a {
+				display: block;
+				width: 100%;
+				padding: 10px 0;
+				border: 1px solid $color9;
+				background: #fff;
+				color: $color9;
+				font-size: rem(16px);
+				font-weight: 700;
+				text-align: center;	
+				cursor: pointer;
+				@include appearance(none);
+				@include border-radius(50px);
+				@include transition(all .3s ease);
+				&.current {
+					background: $color9;
+					color: #fff;
+				}
+
+				&:hover {
+					@include opacity(.8)
+				}
+			}
+		}
+	}
+	.pageContent {
+		h2 {
+			padding-bottom: 10px;
+			margin-bottom: 15px;
+			border-bottom: 1px solid $color1;			
+			font-size: rem(20px);
+			font-weight: 600;
+			text-transform: uppercase;
+		}
+		article {
+			margin: 20px 0 10px;
+			h5 {
+				margin-bottom: 5px;
+				font-weight: 600;
+				text-transform: uppercase;
+			}
+
+			h6 {
+				color: $color5;
+				font-weight: 600;
+				text-transform: uppercase;
+			}
+
+			p,ul {
+				margin-bottom: 10px;
+				color: $color2;
+				line-height: 1.5;
+			}
+			strong {
+				font-weight: 700;
+			}
+			ul {
+				padding-left: 5px;
+			}
+			li {
+				position: relative;
+				padding-left: 15px;
+				margin-bottom: 10px;
+				&:before {
+					content: '';
+					display: block;
+					position: absolute;
+					top: 5px;
+					left: 0;
+					width: 6px;
+					height: 6px;
+					background: $color5;
+					@include border-radius(50%);
+				}
+			}
+		}
+
+		form {
+			// form
+			&.hide {
+				display: none;
+			}
+			@include form();
+			h3 {
+				padding: 20px 0 10px;
+				font-weight: 600;
+				text-transform: uppercase;
+			}
+			.row {
+				clear: both;
+			}
+			.col {
+				@include span-columns(3 of 6);
+			}
+			#submit {
+				@include supportButton($color9);
+				float: right;
+				max-width: 320px;
+				@include media($mobile) {
+					max-width: 100%;
+				}
+			}
+
+			@include media($mobile) {
+				.col {
+					width: 100%;
+					margin-left: 0;
+					margin-right: 0;
+				}
+			}
+		}
+
+		p.success {
+			max-width: 400px;
+			padding: 40px 20px;
+			margin: auto;
+			margin-top: 40px;
+			font-size: rem(16px);
+			color: #989898;
+			text-align: center;
+			@include box-shadow(0 0 5px 0 rgba(0,0,0,0.3));
+			strong {
+				display: block;
+				color: #43c6cc;
+				font-size: rem(20px);
+				font-weight: 700;
+				text-transform: uppercase;
+			}
+		}
+
+		
+	}
+
+	#modalLojas {
+		.overlay {
+			position: fixed;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			background: rgba(0,0,0,0.5);
+			z-index: 98;			
+		}
+		.mapa {
+			@include box-shadow(0 0 6px 1px rgba(0,0,0,0.3));
+			display: none;
+		}
+		.mapa, iframe {
+		    width: 800px;
+			height: 400px;
+		    position: fixed;
+		    top: 0%;
+		    left: 0%;
+		    right: 0;
+		    bottom: 0;
+		    margin: auto;
+		    background-color: #fff;
+		    background-image: url('/arquivos/optoculos-loading.gif');
+		    background-position: center center;
+		    background-repeat: no-repeat;
+		    z-index: 99;
+
+		    @include media($tablet) {
+		    	width: 70%;
+		    	max-width: 800;
+		    }
+		    @include media($mobile) { 
+				width: 90%;
+		    	max-width: 700;
+		    }
+		}
+
+		.closeModal {			
+			position: absolute;
+			padding: 5px 10px;
+			right: 0;
+			top: -30px;
+			line-height: 1;
+			color: #fff;
+			cursor: pointer;
+
+			i {
+				font-size: rem(10px);
+			}
+		}
+	}
+
+	@include media($mobile) {
+		h3.selected {
+			display: block;			
+		}
+		
+		.navSidebar {
+			.institutionalLinks {				
+				position: absolute;
+				left: 0;
+				width: 100%;
+				padding: 30px;
+				background: #fff;
+				z-index: 20;
+				@include box-shadow(0 5px 5px 0px rgba(0,0,0,0.2));
+
+				&.active {
+					display: none;
+				}
+			}
+		}
+
+		.pageContent {
+			margin-top: 40px;
+			.stores {
+				.item {
+					width: 100%;
+					float: none;					
+				}
+			}
+		}
+	}
+
+	h3.optatende-subtitle {
+		color: $color1;
+		margin: 30px 0;
+		text-transform: uppercase;
+	}
+	ul.optatende-ico-list {
+		li {
+			display: inline;
+			@include media($mobile) {
+				img {
+					max-width: 70px;
+				}
+			}
+		}
+	}
+	/* ==========================================================================
+	A MARCA
+	========================================================================== */
+
+	&.a-marca {
+		#mainContent {
+			.wrapper {
+				max-width: 1350px;
+			}
+		}	
+
+			.a-marca-top {
+				width:100%;
+				position: relative;
+				display: flex;
+				flex-direction: row-reverse;
+				min-height: 636px;
+				margin-top: 40px;
+				.box-title{
+					position: absolute;
+					background-image: url("/arquivos/a-marca-banner-title.png");
+					background-repeat: no-repeat;
+					height: 100%;
+					width: 100%;
+					max-height: 279px;
+					max-width: 443px;
+					top: 0;
+					left: 0;
+					padding: 35px;
+					display: flex;
+					align-items: flex-end;
+					h1 {
+						font-size: rem(51px);
+						color: $white;	
+						font-weight: 900;
+						text-transform: uppercase;
+						line-height: 61px;
+					}
+					img {
+						display: none;
+					}
+				}
+				.box-banner {
+					width: 68%;
+					img {
+						width: 100%;
+					}
+				}
+				.box-text {
+					display: flex;
+					align-items: flex-end;
+					width: 420px;
+					padding: 0 30px 30px 0;
+					flex-direction: column;
+    				justify-content: flex-end;
+					p {
+						color: $color2;
+						font-size: rem(16px);
+						text-align: justify;
+						line-height: 20px;
+						margin-bottom: 15px;
+					}
+				}
+			}
+			.a-marca-mid {
+				width: 100%;
+				margin: 20px 0;
+				.box-banner img{
+					width: 100%;
+				}
+			}
+
+			.a-marca-bot {
+				width: 100%;
+				display: flex;
+				margin-top: 30px;
+				.box-historia {
+					margin-right: 20px;
+					padding: 50px;
+					background-color: $color5;
+					color: $white;
+					h2 {
+						font-size: rem(28px);	
+						margin-bottom: 40px;				
+					}
+					p {
+						font-size: rem(16px);
+						text-align: justify;
+						margin-bottom: 20px;
+					}
+				}
+				.box-banner {
+					.img-tablet {
+						display: none;
+					}
+				}
+			}
+
+			@include media($tablet) {
+				.a-marca-top {
+					min-height: auto;
+					flex-direction: column;
+					.box-banner {
+						width: 100%;
+						img {
+							width: 60%;
+							float: right;
+						}
+					}
+					.box-text {
+						width: 100%;
+						margin-top: 20px;
+						padding: 0;
+					}
+				}
+				.a-marca-bot {
+					flex-direction: column;
+					.box-historia {
+						margin: 0 0 20px 0;
+					}
+					.box-banner img {
+						width: 100%;
+						&.img-tablet {
+							display: block;
+						}
+						&.img-main {
+							display: none;
+						}
+					}
+				}
+			}
+
+			@include media($mobile) {
+				.a-marca-top {
+					min-height: auto;
+					flex-direction: column;
+					margin-top: 20px;
+					.box-title {
+						position: relative;
+						// height: 190px;
+						// max-width: 320px;
+						// background-size: contain;
+						padding: 0;
+						max-width: 100%;
+						max-height: 100%;
+						h1 {
+							font-size: rem(35px);
+							position: absolute;
+							left: 30px;
+							bottom: 20px;
+						}
+						img {
+							display: block;
+							width: 100%;
+						}
+					}
+					.box-banner {
+						display: none;
+					}
+					
+					.box-text {
+						padding: 0;
+						width: 100%;
+						margin-top: 20px;
+						p {
+							font-size: rem(13px);
+							margin-bottom: 10px;
+						}
+					}
+				}
+				.a-marca-mid {
+					margin: 10px 0;
+				}
+				.a-marca-bot {
+					flex-direction: column;
+					margin: 10px 0;
+					.box-historia {
+						margin: 0 0 10px 0;
+						padding: 40px 20px;
+						h2 {
+							font-size: rem(25px);
+							margin-bottom: 20px;
+						}
+						p {
+							font-size: rem(13px);
+							margin-bottom: 10px;
+						}
+					}
+					.box-banner img {
+						width: 100%;
+						&.img-tablet {
+							display: none;
+						}
+						&.img-main {
+							display: block;
+						}
+					}
+				}
+			}
+		
+	}
+	.atendimento {
+		&-texto {
+			color: $color2;
+			margin: 40px 0 30px;
+			text-align: justify;
+			font-size: rem(15px);
+		}
+		&-telefone {
+			color: $color1;
+			font-size: rem(25px);
+			font-weight: 900;
+			@include media($mobile) {
+				text-align: center;
+			}
+		}
+		&-horario {
+			font-size: rem(14px);
+			margin-bottom: 30px;
+			@include media($mobile) {
+				text-align: center;
+			}
+		}
+	}
+}
+
+
+/* ==========================================================================
+	404
+	========================================================================== */
+body.page-not-found {
+	.pageError {
+		padding-top: 80px;
+		text-align: center;
+
+		h1 {
+			color: #fff;
+			font-size: rem(120px);
+			font-weight: 900;
+			line-height: 1;	
+			span {
+				display: inline-block;
+				width: 185px;
+				background: #000;
+				padding: 32px 36px;
+				margin-right: 5px;
+				@include border-radius(250px);
+				&.green {background: $color6;}
+				&.blue {background: $color4;}
+				&.red {background: $color8;}
+			}
+		}
+		h4 {
+			margin: 15px 0;
+			font-size: rem(24px);
+			font-weight: 600;
+			text-transform: uppercase;
+		}
+
+
+		ul {
+			display: table;
+			margin: auto;
+			padding-left: 5px;
+			color: $color2;
+			text-align: left;
+		}
+		li {
+			position: relative;
+			padding-left: 15px;
+			margin-bottom: 10px;
+			&:before {
+				content: '';
+				display: block;
+				position: absolute;
+				top: 5px;
+				left: 0;
+				width: 6px;
+				height: 6px;
+				background: $color9;
+				@include border-radius(50%);
+			}
+		}
+
+		a {
+			@include supportButton($color9);
+			width: 250px;
+			display: block;
+			margin: 10px auto;
+		}
+
+		@include media($mobile) {
+			h1 {
+				font-size: rem(75px);
+				span {
+					width: auto;
+					background: #000;
+					padding: 0px 11px;
+				}
+			}
+			h4 {
+				font-size: rem(18px);
+			}
+		}
+	}
+}
+
+// NOSSA LOJA
+
+.nossas-lojas {
+	.box-banner {
+		img {
+			width: 100%;
+		}
+	}
+
+	.stores {
+		@include display(flex);
+		@include flex-wrap(wrap);
+		.item {
+			width: 50%;
+
+			padding: 10px;
+			min-height: 150px;
+			margin-bottom: 20px;
+
+			p {
+				color: $color2;
+				a {
+					color: $color2;
+				}
+			}
+			&>a {
+				display: table;
+				background: #fff;
+				margin-top: 20px;
+				padding: 10px 25px;
+				border: 1px solid $color9;
+				color: $color9;
+				font-size: rem(14px);
+				font-family: $primaryFont;
+				font-weight: 700;
+				text-align: center;
+				text-transform: uppercase;
+				line-height: 1;
+				cursor: pointer;
+				@include appearance(none);
+				@include border-radius(25px);
+				@include transition(all .3s ease);
+				@include box-shadow(none);		
+				text-shadow: none;
+
+				&:hover {
+					color: #fff;						
+					background: $color9;
+				}
+			}
+		}
+	}
+
+}

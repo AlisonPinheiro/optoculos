@@ -1,0 +1,147 @@
+@font-face {
+  font-family: 'icomoon';
+  src:  url('fonts/icomoon.eot?8cp9xb');
+  src:  url('fonts/icomoon.eot?8cp9xb#iefix') format('embedded-opentype'),
+    url('fonts/icomoon.ttf?8cp9xb') format('truetype'),
+    url('fonts/icomoon.woff?8cp9xb') format('woff'),
+    url('fonts/icomoon.svg?8cp9xb#icomoon') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+[class^="icon-"], [class*=" icon-"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'icomoon' !important;
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-cartao:before {
+  content: "\e90a";
+}
+.icon-arrow_thin:before {
+  content: "\e900";
+  color: #989898;
+}
+.icon-small-view:before {
+  content: "\e901";
+}
+.icon-large-view:before {
+  content: "\e902";
+}
+.icon-amex:before {
+  content: "\e903";
+}
+.icon-clerk:before {
+  content: "\e904";
+}
+.icon-formato-aviador:before {
+  content: "\e905";
+}
+.icon-bag:before {
+  content: "\e906";
+}
+.icon-boleto:before {
+  content: "\e907";
+}
+.icon-box:before {
+  content: "\e908";
+}
+.icon-truck:before {
+  content: "\e909";
+}
+.icon-check:before {
+  content: "\e90b";
+}
+.icon-diners:before {
+  content: "\e90d";
+}
+.icon-ecan:before {
+  content: "\e90e";
+}
+.icon-ball:before {
+  content: "\e90f";
+}
+.icon-elo:before {
+  content: "\e910";
+}
+.icon-formato-esportivo:before {
+  content: "\e911";
+}
+.icon-facebook:before {
+  content: "\e912";
+}
+.icon-medal:before {
+  content: "\e913";
+}
+.icon-change:before {
+  content: "\e914";
+}
+.icon-format-gatinho:before {
+  content: "\e915";
+}
+.icon-mobile-small-view:before {
+  content: "\e916";
+}
+.icon-hipercard:before {
+  content: "\e917";
+}
+.icon-instagram:before {
+  content: "\e918";
+}
+.icon-trash:before {
+  content: "\e919";
+}
+.icon-formato-mascara:before {
+  content: "\e91a";
+}
+.icon-master:before {
+  content: "\e91b";
+}
+.icon-Medalha:before {
+  content: "\e91c";
+}
+.icon-menu:before {
+  content: "\e91d";
+}
+.icon-mobile-large-view:before {
+  content: "\e91e";
+}
+.icon-formato-quadrado:before {
+  content: "\e91f";
+}
+.icon-formato-redondo:before {
+  content: "\e920";
+}
+.icon-formato-retangular:before {
+  content: "\e921";
+}
+.icon-search:before {
+  content: "\e922";
+}
+.icon-arrow:before {
+  content: "\e923";
+}
+.icon-money-medal:before {
+  content: "\e924";
+}
+.icon-visa:before {
+  content: "\e925";
+}
+.icon-close:before {
+  content: "\e927";
+}
+.icon-youtube:before {
+  content: "\e928";
+}
+.icon-vtex:before {
+  content: "\e932";
+}

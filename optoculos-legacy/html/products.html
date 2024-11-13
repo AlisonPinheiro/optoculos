@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:vtex="http://www.vtex.com.br/2009/vtex-common" xmlns:vtex.cmc="http://www.vtex.com.br/2009/vtex-commerce" lang="pt-br">
+
+<head>
+    <vtex:metaTags/>
+    
+    <!--[if lt IE 9]>
+        <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    
+    <vtex:template id="cbyk-commonHead" />
+    
+    <!-- Trustvox -->
+<style type="text/css">
+    .trustvox-widget-rating .ts-shelf-container,
+    .trustvox-widget-rating .trustvox-shelf-container {display: inline-block;}
+    .trustvox-widget-rating span.rating-click-here {
+        top: -3px;
+        display: inline-block;
+        position: relative;
+        color: #DAA81D;
+        font-size: 12px;
+    }
+    .trustvox-widget-rating:hover span.rating-click-here {text-decoration: underline;}
+</style>
+<!-- /Trustvox -->
+</head>
+
+<body>
+    <div class="all">
+       <vtex:template id="cbykonne-header"/>
+        
+        <div id="mainContent">
+            <div class="wrapper">
+                    <vtex.cmc:breadCrumb />
+            
+                <div class="mainProduct">
+                    <section class="mainProductImage">
+                        <div class="topImageproduct">
+                            <div class="product-espelho-vitrine img-virtualmirror">
+                                <button class="glasses__tryon" onclick="fitmixInstance.setFrame(554199)"><img src="/arquivos/virtualmirror.png" alt="Espelho Virtual"/></button>
+                            </div> 
+                        </div>
+                        <vtex.cmc:ProductImage zoom="on"/>
+                    </section><!--/mainProductImage -->
+
+                    <section class="mainProductInfo">
+                        <h1 class="productTitle"><vtex.cmc:productName/></h1>
+                        <h6 class="productReference">ref: <vtex.cmc:productReference/></h6>
+                        
+                                                <!-- Trustvox -->
+                        <div class="trustvox-rating">
+                        <a class="trustvox-fluid-jump trustvox-widget-rating" href="#trustvox-reviews" title="Pergunte e veja opiniões de quem já comprou">
+                            <div class="trustvox-shelf-container" data-trustvox-product-code-js="skuJson.productId" data-trustvox-should-skip-filter="true" data-trustvox-display-rate-schema="true"></div>
+                            <span class="rating-click-here">Clique e veja!</span>
+                        </a>
+                        </div>
+                        <!-- /Trustvox -->
+                        
+                        
+                        
+                        
+                        
+
+                        
+                        <span style="display:none" id="brandname"><vtex.cmc:brandName/></span>
+                        
+                        <div class="priceProduct">
+                            <vtex.cmc:skuPrice/>
+                            <div class="paymentInfo"><vtex.cmc:OtherPaymentMethod/></div>
+                        </div>
+
+                        <div class="chooseProduct">
+                            <vtex.cmc:skuSelection />
+                        </div>
+                        
+                        <div class="buyProduct">
+                            <div class="buyProductButton">
+                                <vtex.cmc:BuyButton />
+                            </div>
+                        </div>
+
+                        <div class="shelfCarousel x-large-Carousel">
+                            <vtex:contentPlaceHolder id="similar" />
+                        </div>
+                       
+                        <div class="moreColors">
+                            <vtex:contentPlaceHolder id="Mais cores" />
+                        </div>
+
+                        <div class="shipping-badge">
+                            <img src="/arquivos/icon-frete-gratis-pdp.png" alt="frete gratis" />
+                        </div>
+
+                        <div class="shipping">
+                            <vtex.cmc:shippingValue/>
+                        </div>
+                        
+                        <div class="form-payment">
+                            <vtex:contentPlaceHolder id="Forma de pagamento" />
+                        </div>
+
+                        <div class="Warranty">
+                            <vtex:contentPlaceHolder id="Garantia" />
+                        </div>
+                        
+                        <div class="advantageBox">
+                            <ul>
+                                <li class="troca">
+                                    <a href="/ajuda-e-suporte/politica-de-troca">
+                                        <p class="stage">
+                                            <i class="ico-change"></i>
+                                            <span>Troca<br/>fácil</span>
+                                        </p>
+                                        <p class="hover">
+                                            <i class="ico-close"></i>
+                                            <span>Saiba<br/>mais</span>
+                                        </p>
+                                    </a>
+                                </li>
+                                <li class="original">
+                                    <a href="/atendimento/garantia">
+                                        <p class="stage">
+                                            <i class="ico-medal"></i>
+                                            <span>100%<br/>originais</span>
+                                        </p>
+                                        <p class="hover">
+                                            <i class="ico-close"></i>
+                                            <span>Saiba<br/>mais</span>
+                                        </p>
+                                    </a>
+                                </li>
+                                <li class="preco">
+                                    <a href="/ajuda-e-suporte/pagamento">
+                                        <p class="stage">
+                                            <i class="ico-money-medal"></i>
+                                            <span>Melhor<br/>preço</span>
+                                        </p>
+                                        <p class="hover">
+                                            <i class="ico-close"></i>
+                                            <span>Saiba<br/>mais</span>
+                                        </p>
+                                    </a>
+                                </li>
+                            </ul>
+                            <div class="rules">
+                                * 30 dias para adaptação de lentes<br/>
+                                * 180 dias para fabricação
+                            </div>
+                        </div>
+                    </section><!-- /mainProductInfo-->
+                </div><!-- /mainProduct -->
+                
+                <section class="productDetails">
+                    <h6>Descrição</h6>
+                    <vtex.cmc:productSpecification/>
+                </section><!-- productDescription -->
+
+                <!-- <section class="productBuyTogether">
+                    <vtex.cmc:BuyTogether/>
+                </section> -->
+                
+                 <h3 class="spacedtitle">Você também pode gostar de </h3>
+                <div class="featuredProducts shelfCarousel">
+                    <vtex:contentPlaceHolder id="Voce-tambem-viu" />
+                </div>
+
+                <!-- <h3 class="spacedtitle">Produtos Similares </h3> -->
+                
+
+                
+                <section style="margin-top: 1em; margin-bottom:2em">
+                    <!-- Trustvox -->
+<div class="trustvox-container">
+  <h3 id="trustvox-reviews">Pergunte e veja opiniões de quem já comprou</h3>
+  <div id="_trustvox_widget"></div>
+</div>
+<!-- /Trustvox -->
+                </section>
+
+                <section class="featuredBanner bannerHorizontalHome ">
+                    <vtex:contentPlaceHolder id="Banner Horizontal" />
+                </section>
+
+               
+
+                    <!-- <section class="description-product">
+                        <div class="" id="product-specs" role="group" aria-label="menu-anchor" style="text-align: center;">
+                            <a  id="btn-description" class="btn btn-default"> <h2 class="spacedtitle">DESCRIÇÃO</h2></a>
+                           <a  id="btn-specification" class="btn btn-default"><h2 class="spacedtitle">Comentarios</h2></a> 
+                        </div>
+                    </section> -->
+
+                <!-- <section class="featuredProducts shelfCarousel productComplementary">  
+                    <vtex:contentPlaceHolder id="Produtos complementares" />
+                </section>productComplementary -->
+            </div><!-- /wrapper -->
+        </div><!-- /mainContent-->
+
+      <vtex:template id="cbyk-footer"/>
+    </div><!--/all-->
+
+     <vtex:template id="cbyk-commonBottom" />
+</body>
+
+<!-- Trustvox -->
+<script type="text/javascript">
+ window._trustvox =  [];
+ _trustvox.push(['_storeId', '111372']);
+
+ _trustvox.push(['_productId',  skuJson.productId]);
+ _trustvox.push(['_productName', skuJson.name]);
+ _trustvox.push(['_productPhotos', [skuJson.skus[0].image]]);
+
+  $(document).ready(function() {
+    $('.trustvox-fluid-jump').on('click', function(event) {
+        event.preventDefault();
+        var offset = $($(this).attr('href')).offset().top;
+        $('html, body').animate({scrollTop:offset}, 500);
+    });
+  });
+</script>
+<script async="true" type="text/javascript" src="//static.trustvox.com.br/sincero/sincero.js"></script>
+<script async="true" type="text/javascript" src="/arquivos/jsonJerryRig.js"></script>
+<script async="true" type="text/javascript" src="/arquivos/espelho-virtual.js"></script>
+<!-- /Trustvox -->
+</html>

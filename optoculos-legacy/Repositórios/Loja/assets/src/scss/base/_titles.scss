@@ -1,0 +1,57 @@
+/*titles*/
+
+//titulo principal das paginas
+@mixin pageTitle (){
+
+}
+
+//produto principal
+@mixin productTitle(){
+    display: block;
+    margin-bottom: 15px;
+    color: $color1;
+    font-size: rem(25px);
+    font-weight: 900;
+    text-transform: uppercase;
+}
+
+//vitrines, blocos com produtos
+@mixin shelfTitle(){
+    display: block;
+    margin-bottom: 20px;
+    color: $color2;
+    font-size: rem(60px);
+    font-weight: 900;
+    text-transform: uppercase;
+    @include media($tablet) {
+        font-size: rem(34px);
+        // margin-bottom: 30px;
+    }
+    @include media($mobile) {
+        font-size: rem(22px);
+        // margin-bottom: 20px;
+        text-align: center;
+    }
+}
+
+//blocos de sessoes, ex: minha conta, meus endereços
+@mixin sectionTitle(){
+    display: block;
+    padding: 80px 0;
+    color: $color5;
+    font-size: rem(80px);
+    font-weight: 900;
+    text-transform: uppercase;
+    @include media($tablet) {
+        padding: 60px 0;
+        font-size: rem(65px);
+    }
+    @include media($mobile) {
+        padding: 30px 0;
+        font-size: rem(30px);
+    }
+}
+
+//subtitulos texto
+@mixin subTitle(){
+}

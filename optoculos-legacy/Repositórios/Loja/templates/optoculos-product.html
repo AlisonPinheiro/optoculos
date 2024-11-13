@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:vtex="http://www.vtex.com.br/2009/vtex-common" xmlns:vtex.cmc="http://www.vtex.com.br/2009/vtex-commerce" lang="pt-br">
+
+<head>
+    <vtex:metaTags/>
+    
+    <!--[if lt IE 9]>
+        <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    
+    <vtex:template id="optoculos-commonHead" />
+</head>
+
+<body>
+    <div class="all">
+        <vtex:template id="optoculos-header" />
+        
+        <div id="mainContent">
+            <div class="wrapper">
+                <vtex.cmc:breadCrumb />
+            
+                <div class="mainProduct">
+                    <section class="mainProductImage">
+                        <vtex.cmc:ProductImage zoom="on"/>
+                    </section><!--/mainProductImage -->
+
+                    <section class="mainProductInfo">
+                        <h1 class="productTitle"><vtex.cmc:productName/></h1>
+                        <h6 class="productReference">ref: <vtex.cmc:productReference/></h6>
+                        
+                        <div class="priceProduct">
+                            <vtex.cmc:skuPrice/>
+                            <div class="paymentInfo"><vtex.cmc:OtherPaymentMethod/></div>
+                        </div>
+
+                        <div class="chooseProduct">
+                            <vtex.cmc:skuSelection />
+                        </div>
+                        
+                        <div class="buyProduct">
+                            <div class="buyProductButton">
+                                <vtex.cmc:BuyButton />
+                            </div>
+                        </div>
+
+                        <div class="moreColors">
+                            <vtex:contentPlaceHolder id="Mais cores" />
+                        </div>
+
+                        <div class="shipping">
+                            <vtex.cmc:shippingValue/>
+                        </div>
+                        
+                        <div class="advantageBox">
+                            <ul>
+                                <li class="troca">
+                                    <p class="stage">
+                                        <i class="ico-change"></i>
+                                        <span>Troca<br/>fácil</span>
+                                    </p>
+                                    <p class="hover">
+                                        <i class="ico-close"></i>
+                                        <span>Saiba<br/>mais</span>
+                                    </p>
+                                </li>
+                                <li class="original">
+                                    <p class="stage">
+                                        <i class="ico-medal"></i>
+                                        <span>100%<br/>originais</span>
+                                    </p>
+                                    <p class="hover">
+                                        <i class="ico-close"></i>
+                                        <span>Saiba<br/>mais</span>
+                                    </p>
+                                </li>
+                                <li class="preco">
+                                    <p class="stage">
+                                        <i class="ico-money-medal"></i>
+                                        <span>Melhor<br/>preço</span>
+                                    </p>
+                                    <p class="hover">
+                                        <i class="ico-close"></i>
+                                        <span>Saiba<br/>mais</span>
+                                    </p>
+                                </li>
+                            </ul>
+                            <div class="rules">
+                                * 30 dias para adaptação de lentes<br/>
+                                * 180 dias para fabricação
+                            </div>
+                        </div>
+                    </section><!-- /mainProductInfo-->
+                </div><!-- /mainProduct -->
+
+                <div class="productBuyTogether">
+                    <vtex.cmc:BuyTogether/>
+                </div>
+
+                <section class="productDetails">
+                    <h6>Descrição</h6>
+                    <vtex.cmc:ProductDescription/>
+                </section><!-- productDescription -->
+
+                <section class="featuredProducts shelfCarousel productComplementary">  
+                    <vtex:contentPlaceHolder id="Produtos complementares" />
+                </section><!-- productComplementary -->
+            </div><!-- /wrapper -->
+        </div><!-- /mainContent-->
+
+        <vtex:template id="optoculos-footer" />
+    </div><!--/all-->
+
+    <vtex:template id="optoculos-commonBottom" />
+</body>
+</html>

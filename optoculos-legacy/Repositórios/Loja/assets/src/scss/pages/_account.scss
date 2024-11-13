@@ -1,0 +1,432 @@
+@charset "UTF-8";
+/* ==========================================================================
+   account
+   ========================================================================== */
+body.account {
+	// .pageHeader{		
+	// 	.searchBox .fulltext-search-box{
+	// 		box-shadow: none;
+	// 	}
+	// }
+	
+	.content{
+		position: relative;
+		& > .span4, & > .span6, & > .span3{margin: 0}
+	}
+
+	.row{margin: 0}
+
+	#mainContent {
+		h4 {
+			margin-bottom: 30px;
+			font-size: rem(14px);
+			font-weight: 600;			
+			text-transform: uppercase;
+		}
+	}
+
+	.nav-account {
+		margin: 0px 0 30px;
+		ul {
+			margin: 0;
+			padding: 0;
+			font-size: rem(16px);
+			letter-spacing: 1px;
+			font-weight: 600;
+			text-align: center;			
+		}
+		li {
+			display: inline-block;
+			line-height: normal;
+			text-transform: uppercase;
+			&:not(:last-child) {
+				margin-right: 50px;
+			}
+		}
+		h2 {
+			margin: 0;
+			color: $color5 !important;
+			font-size: rem(16px);			
+			line-height: normal;
+			text-align: center;
+			text-decoration: underline;
+		}
+		a {
+			color: $color2;
+			text-align: center;
+			text-decoration: none;
+		}
+	}
+
+	//botoes
+	#edit-data-link, 
+	.new-address-link .address-update, 
+	.orders-link a, 
+	.btn-myOrders {		
+		@include supportButton($color9);
+		padding: 10px 10px;
+		margin: 10px 0 20px;
+		text-decoration: none !important;						
+		display: table;
+	}
+	.modal-footer .btn-primary {
+		@include appearance(none);
+		@include supportButton($color4);
+		margin: 10px 0 20px;
+		text-decoration: none !important;		
+		text-shadow: none;
+		box-shadow: none;		
+		display: table;		
+	}
+	.modal-footer .btn-link{
+		@include appearance(none);
+		@include supportButton($color4);
+		margin: 10px 0 20px;
+		text-decoration: none !important;				
+		display: table;	 
+	}
+
+	/*poup*/
+	.modal{
+		max-width: 560px;
+		height: 560px;
+		#accountAjaxBusy {
+		    position: absolute;
+		    top: 0;
+		    bottom: 0;
+		    right: 0;
+		    left: 0;
+		    margin: auto;
+		    width: 180px;
+		    height: 64px;
+		    font-size: 0;
+		    background: url('/arquivos/optoculos-loading.gif') no-repeat center;
+		}
+		.modal-header{
+			background: #f1f1f1;
+			border-bottom: 1px dotted #bebebe;
+			
+			h3{
+				font-size: rem(18px);
+				font-weight: 700;
+				margin-bottom: 0;
+				color: $color1;
+				text-transform: uppercase;
+				line-height: 1.2;
+			}
+			button{display: none !important;}
+		}
+		
+		.modal-body{
+			@include form();
+			max-height: 450px;
+			overflow: auto;
+			h5{
+				margin: 10px 0;
+				color: $color5;
+				font-size: rem(16px);
+				font-weight: 600;
+				line-height: 1.5;
+				text-transform: uppercase;
+			}
+
+			a {
+				color: $color6;
+				font-size: rem(12px);
+				font-weight: 600;
+			}
+			label{
+				&.error{
+					float: right;
+					color: $midgrey;
+				}
+			}
+
+			.control-group{
+				margin-bottom: 20px;
+			}
+		}
+
+		.modal-footer{
+			background: #f1f1f1;
+	    	border-top: 1px dotted #bebebe;
+	    	button {display: none !important;}
+			.btn-primary{				
+				width: auto;
+				float: right;
+				margin: 0;
+				padding: 10px 25px;
+			}
+			.btn-link{
+				width: auto;
+				float: left;
+				margin: 0;
+				padding: 10px 25px;
+			}
+		}
+
+		.profile-detail-form{
+			.form-personal-data-name {
+				@include span-columns(6 of 12);
+			}
+			.form-personal-data-surname {
+				@include span-columns(6 of 12);
+				@include omega();
+			}
+			.form-personal-data-nickname {
+				@include span-columns(4 of 12);
+			}
+			.form-personal-data-cpf {
+				@include span-columns(4 of 12);
+			}
+			.form-personal-data-date-of-birth {
+				@include span-columns(4 of 12);
+				@include omega();
+			}
+
+			.form-contact-data-corporate-name,
+			.form-contact-data-fancy-name,
+			.form-contact-data-business-document,
+			.form-contact-data-state-registration {
+				@include span-columns(6 of 12);				
+			}
+
+			.form-contact-data-fancy-name,
+			.form-contact-data-state-registration {
+				@include omega();
+			}
+
+			.form-personal-data-gender{
+				input {
+					vertical-align: middle;
+				}
+				label{
+					display: inline-block;
+					margin-right: 10px;
+				}
+			}
+
+			.form-contact-data-telephone,
+			.form-contact-data-cellphone {
+				@include span-columns(6 of 12);
+			}
+
+
+			.form-business-data-name{
+				font-weight: bold;
+				text-decoration: underline;
+				a {
+					font-size: 0;
+					display: block;
+					&:before {
+						content: "Incluir dados de pessoa jurídica";
+						display: block;
+						font-size: 12px;
+					}
+					&[data="on"] {
+						&:before {
+							content: "Não usar dados de pessoa jurídica";							
+						}	
+					}
+				}
+			}
+
+			@include media($mobile) {
+				.form-personal-data-name,
+				.form-personal-data-surname,
+				.form-personal-data-nickname,
+				.form-personal-data-cpf,
+				.form-personal-data-date-of-birth,				
+				.form-contact-data-corporate-name,
+				.form-contact-data-fancy-name,
+				.form-contact-data-business-document,
+				.form-contact-data-state-registration,
+				.form-contact-data-telephone,
+				.form-contact-data-cellphone {
+					width: 100%;
+					float: none;
+					margin-right: 0;
+				}
+			}
+		}
+
+		.address-form{
+			//.address-form-street-name{width: 300px;}
+			//[class*="span"]{margin: 0 10px 0 0}
+
+			.address-form-addressee {
+				@include span-columns(6 of 12);
+				&:nth-child(2) {
+					@include omega();
+				}				
+			}
+			.address-form-address-type {
+				@include span-columns(8 of 12);
+			}
+			.address-form-cep {
+				@include span-columns(4 of 12);
+				@include omega();
+			}
+			.row {
+				clear: both;
+				.span4 {
+					@include span-columns(9 of 12);
+					input {width: 100% !important;}
+				}
+				.span1 {
+					@include span-columns(3 of 12);
+					input {width: 100% !important;}
+				}
+				.span3 {
+					@include span-columns(6 of 12);
+					input {width: 100% !important;}
+				}
+			}
+			.address-form-state {
+				@include span-columns(3 of 12);
+				#state {
+					width: 100%;
+				}
+			}
+			.address-form-city {
+				@include span-columns(9 of 12);
+			}
+			@include media($mobile) {
+				.address-form-addressee,
+				.address-form-address-type,
+				.address-form-cep,
+				.address-form-state,
+				.address-form-city {
+					width: 100%;
+					float: none;
+					margin-right: 0;
+				}
+				.row {
+					clear: both;
+					.span4,
+					.span1,
+					.span3 {
+						width: 100%;
+						float: none;
+						margin-right: 0;
+					}
+				}					
+			}
+		}
+	}
+
+	/*perfil*/
+	.profile-detail-display{
+		@include span-columns(3.5);
+		@include shift(2.5);
+		border: 1px solid $borderColor;
+		padding: 20px 30px;
+		@include border-radius(8px);
+
+		@include media($desktop) {
+			@include span-columns(4);
+			@include shift(2);
+		}
+		@include media($tablet) {
+			@include span-columns(3.5);
+			@include shift(.5);
+		}
+		@include media($mobile) {
+			@include span-columns(4);
+			@include omega();
+			float: none !important;
+			margin: 0 auto;
+			margin-top: 25px;
+		}
+				
+		.edit-profile-link {
+			a {
+				width: 100%;
+				max-width: 300px;
+			}
+		}
+		h5 {
+			color: $color2;			
+			font-size: rem(14px);
+			font-weight: 600;			
+			text-overflow: ellipsis; /* will make [...] at the end */
+            white-space: nowrap; /* paragraph to one line */
+			overflow:hidden; /* older browsers */
+		}
+		.profile-detail-display-email {
+			color: $color2;			
+			font-size: rem(14px);
+			text-overflow: ellipsis; /* will make [...] at the end */
+            white-space: nowrap; /* paragraph to one line */
+            overflow:hidden; /* older browsers */
+		}
+		
+		.profile-detail-display-info {
+			margin-top: 15px;
+			span{
+				color: $color2;				
+				font-size: rem(14px);
+				line-height: 1.5;
+
+				&.title {
+					margin-right: 5px;
+					font-weight: 600;
+				}
+			}
+		}
+	}
+
+	/*enderecos*/
+	.address-display-block{	
+		@include span-columns(3.5);
+		border: 1px solid $borderColor;
+		padding: 20px 30px;		
+		@include border-radius(8px);
+
+		@include media($desktop) {
+			@include span-columns(4);
+		}
+		@include media($tablet) {
+			@include span-columns(3.5);
+			//@include omega();
+		}
+		@include media($mobile) {
+			@include span-columns(4);
+			@include omega();		
+			margin-top: 25px;	
+		}
+
+		#address-remove,
+		#address-edit {
+			display: none;
+		}		
+		.address-display-unit{
+			width: 100%;
+			padding: 15px;
+			margin: 0 15px 15px 0;
+			
+			h5 {
+				font-size: rem(14px);
+				font-weight: 600;
+				word-wrap: break-word;
+			}
+
+			.edit-address-link{
+				margin-bottom: 10px;
+				margin-left: -5px;
+				color: $color2;
+
+				a {
+					padding: 5px;
+					color: $color2;
+					font-size: rem(11px);
+					text-decoration: underline;
+				}
+			}
+
+			.address-display-unit-info {
+				font-size: rem(12px);
+			}
+		}
+	}	
+}

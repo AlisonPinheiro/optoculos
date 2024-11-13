@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:vtex="http://www.vtex.com.br/2009/vtex-common"
+      xmlns:vtex.cmc="http://www.vtex.com.br/2009/vtex-commerce" lang="pt-br">
+
+<head>
+    <vtex:metaTags/>
+
+    <!--[if lt IE 9]>
+    <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+     <vtex:template id="cbyk-commonHead" />
+</head>
+
+<body>
+<div class="all">
+    <vtex:template id="cbykonne-header"/>
+
+    <div id="mainContent">
+        <section class="topBanner showDesk">
+            <vtex:contentPlaceHolder id="Banner Departamento Desktop"/>
+        </section>
+        <section class="topBanner showMobile">
+            <vtex:contentPlaceHolder id="Banner Departamento Mobile"/>
+        </section>
+
+        <div class="wrapper">
+            <vtex.cmc:breadCrumb/>
+
+            <section class="searchDisplay"></section>
+
+
+            <div class="content-area navBar">
+                <aside class="navTopbar">
+                    <div class="navTopbarHead">
+                        <p>FILTROS</p>
+                        <i class="ico-close"></i>
+                    </div>
+
+                    <div class="filterOptions">
+                        <vtex.cmc:searchNavigator/>
+                    </div>
+                </aside>
+
+                <div class="filterMobileToggle">
+                    <a href="#">Filtros</a>
+                    <i class="ico-arrow"></i>
+                </div>
+
+                <section class="shelfInteraction">
+                    <span class="selectView-title">VISUALIZAÇÃO</span>
+                    <div class="selectView">
+                        <div class="device desktop">
+                            <!--<span class="selectViewAction midView"          data-layout="mid"><i class="ico-grid-three"></i></span>-->
+                            <span class="selectViewAction smallView active" data-layout="small"><i
+                                    class="ico-small-view"></i></span>
+                            <span class="selectViewAction largeView" data-layout="large"><i class="ico-large-view"></i></span>
+                        </div>
+                        <div class="device tablet">
+                            <span class="selectViewAction smallView" data-layout="small"><i
+                                    class="ico-mobile-small-view"></i></span>
+                            <span class="selectViewAction largeView active" data-layout="large"><i
+                                    class="ico-mobile-large-view"></i></span>
+                        </div>
+                        <div class="device mobile">
+                            <span class="selectViewAction smallView" data-layout="small"><i
+                                    class="ico-mobile-small-view"></i></span>
+                            <span class="selectViewAction largeView active" data-layout="large"><i
+                                    class="ico-mobile-large-view"></i></span>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="catalog-options">
+                    <div class="orderby-toggle">
+                        <a class="toggle order">
+                            <span><em></em></span><i class="ico-arrow"></i><i class="ico-close"></i>
+                        </a>
+                        <div class="orderby-lightbox">
+                            <div class="orderby-lightbox-overlay"></div>
+                            <div class="orderby-lightbox-content">
+                                <div class="orderby-lightbox-content-head">
+                                    <div class="content">
+                                        <h5>Ordenar por</h5>
+                                    </div>
+                                </div>
+                                <div class="orderby-lightbox-content-body">
+                                    <div class="content">
+                                        <a class="menor-preco" href="#" data-order="OrderByPriceASC">Menor Preço</a>
+                                        <a class="maior-preco" href="#" data-order="OrderByPriceDESC">Maior Preço</a>
+                                        <a class="mais-vendidos" href="#" data-order="OrderByTopSaleDESC">Mais
+                                            vendidos</a>
+                                        <a class="melhor-avaliado" href="#" data-order="OrderByReviewRateDESC">Melhores
+                                            avaliações</a>
+                                        <a class="de-az" href="#" data-order="OrderByNameASC">A - Z</a>
+                                        <a class="de-za" href="#" data-order="OrderByNameDESC">Z - A</a>
+                                        <a class="ordem-lancamento" href="#" data-order="OrderByReleaseDateDESC">Data de
+                                            lançamento</a>
+                                        <a class="melhor-desconto" href="#" data-order="OrderByBestDiscountDESC">Melhor
+                                            Desconto</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+
+            </div>
+
+
+            <section class="pageContent">
+                <div id="pageContent_title">
+                    <vtex.cmc:searchTitle/>
+                </div>
+
+                <vtex.cmc:searchResult layout="1c725695-1f6c-4434-b5e1-b250f30aac96" itemCount="24" columnCount="24"/>
+            </section>
+
+        </div><!-- /wrapper -->
+    </div><!-- /mainContent-->
+
+  <vtex:template id="cbyk-footer"/>
+</div><!--/all-->
+
+<script src="/arquivos/vtex-smartResearch.min.js"></script>
+   <vtex:template id="cbyk-commonBottom" />
+
+<div class="buy-in-page" style="display: none">
+    <div class="close">x</div>
+    <div class="buy-in-page__content">
+        <div class="mainProduct">
+            <section class="mainProductImage">
+            </section><!--/mainProductImage -->
+
+            <section class="mainProductInfo">
+                <h1 class="productTitle">
+                    <vtex.cmc:productName/>
+                </h1>
+                <h6 class="productReference">ref: </h6>
+
+                <div class="priceProduct">
+
+                </div>
+
+                <div class="chooseProduct">
+
+                </div>
+
+                <div class="buyProduct">
+                    <div class="buyProductButton">
+
+                    </div>
+                </div>
+
+
+                <div class="advantageBox">
+                    <ul>
+                        <li class="troca">
+                            <p class="stage">
+                                <i class="ico-change"></i>
+                                <span>Troca<br/>fácil</span>
+                            </p>
+                            <p class="hover">
+                                <i class="ico-close"></i>
+                                <span>Saiba<br/>mais</span>
+                            </p>
+                        </li>
+                        <li class="original">
+                            <p class="stage">
+                                <i class="ico-medal"></i>
+                                <span>100%<br/>originais</span>
+                            </p>
+                            <p class="hover">
+                                <i class="ico-close"></i>
+                                <span>Saiba<br/>mais</span>
+                            </p>
+                        </li>
+                        <li class="preco">
+                            <p class="stage">
+                                <i class="ico-money-medal"></i>
+                                <span>Melhor<br/>preço</span>
+                            </p>
+                            <p class="hover">
+                                <i class="ico-close"></i>
+                                <span>Saiba<br/>mais</span>
+                            </p>
+                        </li>
+                    </ul>
+                    <div class="rules">
+                        * 30 dias para adaptação de lentes<br/>
+                        * 180 dias para fabricação
+                    </div>
+                </div>
+            </section><!-- /mainProductInfo-->
+            <section class="productDetails">
+                <h6>Descrição</h6>
+            </section><!-- productDescription -->
+        </div><!-- /mainProduct -->
+    </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:vtex="http://www.vtex.com.br/2009/vtex-common"
+    xmlns:vtex.cmc="http://www.vtex.com.br/2009/vtex-commerce" lang="pt-br">
+
+<head>
+    <vtex:metaTags />
+
+    <!--[if lt IE 9]>
+    <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    <vtex:template id="cbyk-commonHead" />
+    <link href="/arquivos/app-lentes-0.1.0.chunk.js" rel="preload" as="script" />
+    <link href="/arquivos/app-lentes-0.1.0.css" rel="preload" as="style" />
+    <link href="/arquivos/app-lentes-0.1.0.js" rel="preload" as="script" />
+    <link href="/arquivos/app-lentes-0.1.0.css" rel="stylesheet" />
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+
+
+</head>
+
+<body>
+    <div class="all">
+        <vtex:template id="cbykonne-header" />
+
+        <div id="mainContent">
+            <section class="topBanner showDesk">
+                <vtex:contentPlaceHolder id="Banner Departamento Desktop" />
+            </section>
+            <section class="topBanner showMobile">
+                <vtex:contentPlaceHolder id="Banner Departamento Mobile" />
+            </section>
+
+            <div class="wrapper">
+                <vtex.cmc:breadCrumb />
+                <section class="pageContent">
+                    <div id="app"></div>
+                    <script src="/arquivos/app-lentes-0.1.0.chunk.js"></script>
+                    <script src="/arquivos/app-lentes-0.1.0.js"></script>
+
+                </section>
+
+            </div><!-- /wrapper -->
+        </div><!-- /mainContent-->
+
+        <vtex:template id="cbyk-footer" />
+    </div>
+    <!--/all-->
+
+    <script src="/arquivos/vtex-smartResearch.min.js"></script>
+    <vtex:template id="cbyk-commonBottom" />
+
+    <div class="buy-in-page" style="display: none">
+        <div class="close">x</div>
+        <div class="buy-in-page__content">
+            <div class="mainProduct">
+                <section class="mainProductImage">
+                </section>
+                <!--/mainProductImage -->
+
+                <section class="mainProductInfo">
+                    <h1 class="productTitle">
+                        <vtex.cmc:productName />
+                    </h1>
+                    <h6 class="productReference">ref: </h6>
+
+                    <div class="priceProduct">
+
+                    </div>
+
+                    <div class="chooseProduct">
+
+                    </div>
+
+                    <div class="buyProduct">
+                        <div class="buyProductButton">
+
+                        </div>
+                    </div>
+
+
+                    <div class="advantageBox">
+                        <ul>
+                            <li class="troca">
+                                <p class="stage">
+                                    <i class="ico-change"></i>
+                                    <span>Troca<br />fácil</span>
+                                </p>
+                                <p class="hover">
+                                    <i class="ico-close"></i>
+                                    <span>Saiba<br />mais</span>
+                                </p>
+                            </li>
+                            <li class="original">
+                                <p class="stage">
+                                    <i class="ico-medal"></i>
+                                    <span>100%<br />originais</span>
+                                </p>
+                                <p class="hover">
+                                    <i class="ico-close"></i>
+                                    <span>Saiba<br />mais</span>
+                                </p>
+                            </li>
+                            <li class="preco">
+                                <p class="stage">
+                                    <i class="ico-money-medal"></i>
+                                    <span>Melhor<br />preço</span>
+                                </p>
+                                <p class="hover">
+                                    <i class="ico-close"></i>
+                                    <span>Saiba<br />mais</span>
+                                </p>
+                            </li>
+                        </ul>
+                        <div class="rules">
+                            * 30 dias para adaptação de lentes<br />
+                            * 180 dias para fabricação
+                        </div>
+                    </div>
+                </section><!-- /mainProductInfo-->
+                <section class="productDetails">
+                    <h6>Descrição</h6>
+                </section><!-- productDescription -->
+            </div><!-- /mainProduct -->
+        </div>
+    </div>
+</body>
+
+</html>

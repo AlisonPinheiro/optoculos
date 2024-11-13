@@ -1,0 +1,76 @@
+/*buttons*/
+@mixin primaryButton(){
+}
+
+@mixin secondaryButton($color){
+	background: transparent;
+    width: 100%;
+    padding: 15px 5px;
+	border: 0;
+	color: $color;
+	border: 1px solid $color;
+	font-size: rem(14px);
+	font-family: $primaryFont;
+	font-weight: 700;
+	text-align: center;
+    text-transform: uppercase;
+    line-height: 1;
+	cursor: pointer;
+	@include appearance(none);
+	@include border-radius(25px);
+	@include transition(all .3s ease);
+	@include box-shadow(none);		
+	text-shadow: none;
+
+	&:hover {
+		background: rgba($color, .8);
+		color: $white;
+	}
+}
+
+@mixin supportButton($color){
+    background: $color;
+    width: 100%;
+    padding: 15px 5px;
+	border: 0;
+	color: $white;
+	font-size: rem(14px);
+	font-family: $primaryFont;
+	font-weight: 700;
+	text-align: center;
+    text-transform: uppercase;
+    line-height: 1;
+	cursor: pointer;
+	@include appearance(none);
+	@include border-radius(25px);
+	@include transition(all .3s ease);
+	@include box-shadow(none);		
+	text-shadow: none;
+
+	&:hover {
+		background: rgba($color, .8);
+	}
+}
+
+@mixin buyActionButton(){
+	background: $color5;
+    width: 100%;
+    padding: 15px 5px;
+	border: 0;
+	color: $white;
+	font-size: rem(14px);
+	font-family: $primaryFont;	
+	text-align: center;
+    text-transform: uppercase;
+    line-height: 1;
+	cursor: pointer;
+	@include appearance(none);
+	@include border-radius(25px);
+	@include transition(all .3s ease);
+	@include box-shadow(none);		
+	text-shadow: none;
+
+	&:hover {
+		background: rgba($color5, .8);
+	}
+}

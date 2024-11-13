@@ -1,0 +1,221 @@
+/* ==========================================================================
+   Slider
+   ========================================================================== */
+.fullGallery {
+    background: url('/arquivos/optoculos-loading.gif') no-repeat center center;
+    background-color: #fff;
+    overflow: hidden;
+    height: 100px;
+    @include transition(height 0.3s ease);
+
+    .box-banner {
+        opacity: 0;
+        position: absolute;
+    }
+    &.slick-initialized {
+        background: none;
+        overflow: inherit;
+        height: auto;
+
+        .box-banner {
+            opacity: 1;
+            position: relative;
+            transition: opacity 0.2s ease-in;
+        }
+
+        &.bgImage {
+            .box-banner a {
+                display: block;
+                &:before {
+                    content: "";
+					display: block;
+					padding-top: 47.92%;
+                }
+            }
+        }
+    }
+
+	@include sideNavIcon($white, 45%, 30px, 'optoculosfonticon' !important, rem(58px), "\e900", 180deg, 0deg);
+	.slick-prev, .slick-next {
+        @include transition(all .2s ease);
+        &:hover {
+            padding-right: 20px;
+        }
+	}
+    @include media($mobile) {
+		.slick-prev, .slick-next {
+	    	&:after {
+	    		font-size: rem(18px);
+	    	}
+	    }
+		.slick-prev {
+			left: 10px;
+		}
+		.slick-next {
+			right: 10px;
+		}
+    }
+
+
+
+	@include galleryBullets(transparent, $color1, 12px, 12px, 0, transparent, 10px);
+    .slick-dots {
+        position: absolute;
+        width: 10px;
+        height: 100%;
+        top: 0;        
+        right: 40px;	    
+        bottom: 0px;
+        margin: auto;        
+        display: flex !important;
+        align-items: center;
+        flex-direction: column;
+        justify-content: center;    
+    	li {
+            display: block;
+    		width: auto;
+    		float: none;
+    		line-height: 0;
+            margin: 5px 0px;
+        }
+        button {
+            @include box-shadow(inset 0 0 0 1px $color1);
+            width: 8px !important;
+            height: 8px !important;;
+        }
+
+    	@include media($tablet) {
+    		bottom: 20px;
+			li { 
+				button {
+					width: 15px !important;;
+					height: 15px !important;;
+				}
+			}
+    	}
+    }    
+}
+
+.shelfCarousel {
+    @include sideNavIcon($color2, 50%, -16px, 'optoculosfonticon' !important, rem(64px), "\e900", 180deg, 0deg);
+    @include media ($mobile) {
+        @include sideNavIcon($color2, 50%, -16px, 'optoculosfonticon' !important, rem(32px), "\e900", 180deg, 0deg);
+    }
+    position: relative;    
+
+    .shelf > ul {
+        background: url('/arquivos/optoculos-loading.gif') no-repeat center center;
+        overflow: hidden;
+        height: 100px;
+        padding: 0 0px;
+        @include transition(height 0.3s ease);
+    }
+    li {
+        opacity: 0;
+        position: absolute;
+    }
+    ul.slick-slider.slick-initialized {
+        position: inherit; // hack
+        background: none;
+        overflow: inherit;
+        height: auto;
+    }
+    ul.slick-initialized li {
+        opacity: 1;
+        position: relative;
+        transition: opacity 0.2s ease-in;        
+    }
+    
+    
+
+    .slick-prev,
+    .slick-next {
+        padding: 0;
+    }
+    .shelf {
+        li.slick-slide {
+            margin: 10px;
+        }
+    }
+	
+    @include media($tablet) {
+		.slick-prev {
+			left: 0px;
+		}
+		.slick-next {
+			right: 0px;
+		}
+        .shelf {
+            &> ul {  
+                padding: 0;
+            }
+        }
+    }   
+}
+
+.thumbs {
+    .slick-prev, .slick-next{            
+        display: block;            
+        border: none; 
+        padding: 0;
+        margin: 10px auto;
+        position: relative;
+        background: transparent;
+        color: $color2;
+        font-size: 0;
+        cursor: pointer;
+        outline: none;
+        z-index: 2;
+        
+        &:after {
+            font-family: 'optoculosfonticon' !important;
+            content: "\e900";
+            speak: none;
+            font-style: normal;
+            font-weight: normal;
+            font-variant: normal;
+            text-transform: none;
+            line-height: 1;
+
+            /* Better Font Rendering =========== */
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            display: inline-block;
+            font-size: rem(10px);
+            
+        }
+    }
+
+    .slick-prev{
+        @include transform(rotate(-90deg));
+    }
+
+    .slick-next{
+        @include transform(rotate(90deg));
+    }    
+
+    @include media($mobile) {
+        @include galleryBullets($white, $color5, 10px, 10px, 1px, $black, 10px);
+        .slick-dots {
+            position: relative;
+            width: 100%;
+            margin-bottom: 15px;
+            li {
+                width: auto;
+                float: none;
+                line-height: 0;
+                margin: 0px 3px;
+                button {
+                    margin: 5px;
+                }
+                &.slick-active {
+                    button {
+                        border:none;
+                    }
+                }
+            }
+        }   
+    }
+}
+.carouselGallery{}
+.verticalSlider{}

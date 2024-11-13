@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:vtex="http://www.vtex.com.br/2009/vtex-common" xmlns:vtex.cmc="http://www.vtex.com.br/2009/vtex-commerce" lang="pt-br">
+
+<head>
+    <vtex:metaTags/>
+    <!--[if lt IE 9]>
+    <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <vtex:template id="cbyk-commonHead" />
+    <style>
+        .lpTexto {
+            text-align: left;
+            padding-top: 30px;
+            padding-bottom: 40px;
+            font-size: 14px;
+            line-height: 20px;
+        }
+        .lptitle {
+            text-align: left;
+            padding-top: 30px;
+            padding-bottom: 20px;
+            font-size: 18px;
+            line-height: 20px;
+            font-weight: bold;
+        }
+        a {
+            text-decoration: none;
+            color: rgb(79, 79, 79);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="all">
+        <vtex:template id="cbykonne-header" />
+
+        <div id="mainContent">
+            <section class="topBanner showDesk">
+                <vtex:contentPlaceHolder id="Banner Departamento Desktop" />
+            </section>
+            <section class="topBanner showMobile">
+                <vtex:contentPlaceHolder id="Banner Departamento Mobile" />
+            </section>
+
+            <div class="wrapper">
+                <div>
+                    <vtex:contentPlaceHolder id="lpTexto" />
+                </div>
+                <div class="lptitle">
+                    <vtex:contentPlaceHolder id="title sol" />
+                </div>
+                <div class="featuredProducts shelfCarousel">
+                    <vtex:contentPlaceHolder id="colecao sol" />
+                </div>
+                <div class="lptitle">
+                    <vtex:contentPlaceHolder id="title grau" />
+                </div>
+                <div class="featuredProducts shelfCarousel">
+                    <vtex:contentPlaceHolder id="colecao grau" />
+                </div>
+            </div>
+            
+            <!-- /mainProduct -->
+        </div>
+    </div>
+    <vtex:template id="cbyk-footer" />
+    <vtex:template id="cbyk-commonBottom" />
+</body>
+
+</html>
+
